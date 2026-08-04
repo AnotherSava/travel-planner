@@ -73,6 +73,9 @@
   .name { font-weight: 550; display: flex; align-items: center; gap: 6px; }
   .swatch { width: 8px; height: 8px; border-radius: 50%; flex: none; }
   .sub { color: var(--muted); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tag.event { background: #4a3a12; color: #f0c674; }
+  .tag.soft { background: transparent; color: var(--muted); border: 1px solid currentColor; opacity: .7; }
+  .note { display: block; margin-top: 6px; color: var(--muted); font-size: 11.5px; font-style: normal; }
   .tags { display: flex; gap: 5px; margin-top: 3px; flex-wrap: wrap; }
   .tag { font-size: 11px; padding: 1px 6px; border-radius: 20px; background: var(--chip); color: var(--muted); }
   .tag.unreliable { color: var(--accent); }
@@ -84,6 +87,9 @@
   }
   .maplibregl-popup-content strong { display: block; margin-bottom: 2px; }
   .maplibregl-popup-close-button { color: var(--muted); font-size: 16px; }
+  /* A guide entry runs to several hundred characters — Park & Tilford Gardens lists
+     eight themed gardens — which pushes an uncapped popup off the bottom of the map. */
+  .maplibregl-popup-content { max-height: 45vh; overflow-y: auto; }
 
   #legend {
     display: flex; gap: 10px; flex-wrap: wrap;
@@ -104,7 +110,7 @@
   <div class="controls">
     <select id="citySelect"></select>
     <select id="categorySelect"><option value="">All categories</option></select>
-    <button id="rankedToggle">Ranked only</button>
+    <button id="rankedToggle">Worth seeing</button>
   </div>
   <ol id="list"></ol>
   <div id="legend"></div>
@@ -134,6 +140,12 @@ const fallback = FAMILIES.at(-1);
 const familyFor = (category) => FAMILY_OF[category] ?? fallback;
 
 const state = { data: null, ready: false, rankedOnly: true, category: "", popup: null };
+
+// True once `travel worth` has run over this city. Older datasets have no worth field,
+// and must still render.
+function scored() {
+  return state.data.pois.some((p) => p.worth);
+}
 const el = (id) => document.getElementById(id);
 
 const map = new maplibregl.Map({
@@ -152,7 +164,14 @@ map.addControl(new maplibregl.NavigationControl(), "top-right");
  * have no ranked POI at all and would select an empty list.
  */
 function candidates() {
-  return state.data.pois.filter((p) => !state.rankedOnly || p.ranking === "sitelinks");
+  if (!state.rankedOnly) return state.data.pois;
+  // Once worth exists it replaces the sitelink cut entirely: prominence is the ordering
+  // this filter used to inherit and the one the worth step exists to correct. The old
+  // ranked list opened with a stadium, an airport, a neighbouring city and two civic
+  // buildings, with Stanley Park fifth.
+  return scored()
+    ? state.data.pois.filter((p) => p.worth?.shortlisted)
+    : state.data.pois.filter((p) => p.ranking === "sitelinks");
 }
 
 function visible() {
@@ -182,21 +201,32 @@ function syncControls() {
 }
 
 function asGeoJSON(pois) {
+  // The index must address `state.data.pois`, because that is what the click handler
+  // looks up. Numbering the *visible* array instead resolved every pin to whatever POI
+  // happened to sit at that offset in the master list — invisible while the two arrays
+  // were merely filtered, total once the visible one is sorted by worth.
+  const master = new Map(state.data.pois.map((p, i) => [p, i]));
   return {
     type: "FeatureCollection",
-    features: pois.map((p, index) => ({
+    features: pois.map((p) => ({
       type: "Feature",
-      id: index,
+      id: master.get(p),
       geometry: { type: "Point", coordinates: [p.lon, p.lat] },
       properties: {
-        index,
+        index: master.get(p),
         label: p.label,
-        description: p.description ?? "",
+        // The worth step's reason answers "why go"; the Wikidata description only says
+        // what a thing is. "hotel located on West Georgia Street" tells a visitor
+        // nothing, while the guide's line about the gargoyles does.
+        description: p.worth?.reason || p.description || "",
         category: p.category,
         color: familyFor(p.category).color,
         sitelinks: p.sitelinks ?? 0,
-        // Sizes the mark so prominence is legible before anything is clicked.
-        weight: p.sitelinks >= 20 ? 3 : p.sitelinks >= 10 ? 2 : 1,
+        // Sizes the mark so the stronger recommendation is legible before anything is
+        // clicked. Falls back to prominence for a dataset with no worth scores.
+        weight: p.worth
+          ? (p.worth.score >= 9 ? 3 : p.worth.score >= 6 ? 2 : 1)
+          : (p.sitelinks >= 20 ? 3 : p.sitelinks >= 10 ? 2 : 1),
       },
     })),
   };
@@ -289,7 +319,10 @@ function installLayers() {
 
 function render() {
   syncControls();
-  const pois = visible();
+  // A copy: `visible()` hands back `state.data.pois` itself when the filter is off, and
+  // sorting in place would permanently reorder the master list the indices address.
+  const pois = [...visible()];
+  if (scored()) pois.sort((a, b) => (b.worth?.score ?? 0) - (a.worth?.score ?? 0));
   const list = el("list");
   list.innerHTML = "";
 
@@ -298,18 +331,20 @@ function render() {
     const item = document.createElement("li");
     item.dataset.index = state.data.pois.indexOf(poi);
     item.innerHTML = `
-      <div class="rank">${poi.sitelinks ?? "–"}</div>
+      <div class="rank">${poi.worth ? poi.worth.score.toFixed(1) : (poi.sitelinks ?? "–")}</div>
       <div class="body">
         <div class="name"><span class="swatch" style="background:${family.color}"></span><span></span></div>
         <div class="sub"></div>
         <div class="tags">
           <span class="tag">${poi.category}</span>
           <span class="tag">${poi.distance_from_centre_km.toFixed(1)} km</span>
+          ${poi.worth?.mode === "event" ? '<span class="tag event">only when something is on</span>' : ""}
+          ${poi.worth && poi.worth.confidence !== "verified" ? `<span class="tag soft">${poi.worth.confidence}</span>` : ""}
           ${poi.coordinate_source === "bbox_centre" ? '<span class="tag unreliable">approx. position</span>' : ""}
         </div>
       </div>`;
     item.querySelector(".name span:last-child").textContent = poi.label;
-    item.querySelector(".sub").textContent = poi.description ?? "";
+    item.querySelector(".sub").textContent = poi.worth?.reason || poi.description || "";
     item.addEventListener("click", () => select(poi, { fly: true }));
     list.appendChild(item);
   }
@@ -344,10 +379,30 @@ function select(poi, { fly }) {
   state.popup?.remove();
   state.popup = new maplibregl.Popup({ offset: 14, closeButton: true })
     .setLngLat([poi.lon, poi.lat])
-    .setHTML(`<strong>${escapeHtml(poi.label)}</strong>${escapeHtml(poi.description ?? "")}`)
+    .setHTML(popupHtml(poi))
     .addTo(map);
 
   if (fly) map.flyTo({ center: [poi.lon, poi.lat], zoom: Math.max(map.getZoom(), 15) });
+}
+
+// The popup has room for the guide's whole entry, which the one-line list row does not.
+// A guidebook's opening sentence is often scene-setting rather than the hook.
+function popupHtml(poi) {
+  const worth = poi.worth;
+  const body = worth?.detail || worth?.reason || poi.description || "";
+  const note = worth?.mode === "event"
+    ? '<em class="note">A venue — there is nothing to see here unless something is scheduled.</em>'
+    : worth?.mode === "incidental"
+      ? '<em class="note">Infrastructure, not a sight.</em>'
+      : "";
+  // Both wikis are CC BY-SA and have to be credited where their prose is shown.
+  const credit = worth?.source === "wikivoyage" && worth.guide_article
+    ? `Wikivoyage · ${worth.guide_article} (CC BY-SA)`
+    : worth?.source === "wikipedia"
+      ? "Wikipedia (CC BY-SA)"
+      : "";
+  const source = credit ? `<em class="note">${escapeHtml(credit)}</em>` : "";
+  return `<strong>${escapeHtml(poi.label)}</strong>${escapeHtml(body)}${note}${source}`;
 }
 
 function escapeHtml(value) {
@@ -369,7 +424,7 @@ el("citySelect").addEventListener("change", (e) => load(e.target.value));
 el("categorySelect").addEventListener("change", (e) => { state.category = e.target.value; render(); });
 el("rankedToggle").addEventListener("click", (e) => {
   state.rankedOnly = !state.rankedOnly;
-  e.target.textContent = state.rankedOnly ? "Ranked only" : "All POIs";
+  e.target.textContent = state.rankedOnly ? (scored() ? "Worth seeing" : "Ranked only") : "All POIs";
   render();
 });
 
