@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Places worth seeing</title>
+
+<!--
+  R0's frontend. Reads cities/<slug>.json directly — there is no API until R1.
+
+  RENDERING. Pins are a clustered GeoJSON source drawn by native circle layers, not one
+  maplibregl.Marker per POI. Markers are DOM elements: 2,190 of them for Vancouver, each
+  repositioned by JavaScript on every frame of a pan. Layers are GPU-drawn from one
+  source and scale to thousands — and drawing our own mark is also why the default pin's
+  hardcoded white centre circle no longer appears.
+
+  Circles rather than symbols with a generated SDF icon: an SDF encodes distance-to-edge
+  in its alpha channel and fails invisibly when the image is not built as one. Labels are
+  a separate symbol layer, so a colliding label yields while its dot always draws.
+
+  TILES. OpenFreeMap serves OSM-derived vector tiles with no API key and no usage cap.
+  The alternative, tile.openstreetmap.org, is what every tutorial hardcodes and is the
+  wrong default: the OSMF policy requires a valid Referer and forbids a restrictive
+  Referrer-Policy that suppresses it — which is what the security-header presets most
+  hosts ship. You would violate the policy by deploying with defaults and never see a
+  warning.
+
+  Attribution is required for the tiles AND for the POI data: ODbL attaches to what the
+  pipeline extracts, not just to what is drawn underneath it.
+-->
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #b45309; --chip: #f3f4f6; --hover: #f9fafb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181c; --fg: #e8e8e8; --muted: #9aa0a6; --line: #2c2f36;
+      --accent: #f0a04b; --chip: #23262c; --hover: #1d2025;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: grid; grid-template-columns: minmax(320px, 30%) 1fr;
+    font: 15px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg);
+  }
+  @media (max-width: 820px) { body { grid-template-columns: 1fr; grid-template-rows: 45vh 55vh; } }
+
+  #panel { display: flex; flex-direction: column; border-right: 1px solid var(--line); min-height: 0; }
+  header { padding: 14px 16px 10px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0 0 2px; font-size: 17px; font-weight: 650; }
+  .meta { color: var(--muted); font-size: 12.5px; }
+  .controls { display: flex; gap: 6px; padding: 10px 16px; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+  select, button {
+    font: inherit; font-size: 13px; padding: 4px 8px; border-radius: 6px;
+    border: 1px solid var(--line); background: var(--chip); color: var(--fg); cursor: pointer;
+  }
+
+  ol { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; min-height: 0; }
+  li { display: flex; gap: 10px; padding: 9px 16px; border-bottom: 1px solid var(--line); cursor: pointer; }
+  li:hover, li.active { background: var(--hover); }
+  li.active { box-shadow: inset 3px 0 0 var(--accent); }
+  .rank {
+    min-width: 30px; text-align: right; font-variant-numeric: tabular-nums;
+    color: var(--muted); font-size: 12.5px; padding-top: 1px;
+  }
+  .body { min-width: 0; }
+  .name { font-weight: 550; display: flex; align-items: center; gap: 6px; }
+  .swatch { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .sub { color: var(--muted); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tags { display: flex; gap: 5px; margin-top: 3px; flex-wrap: wrap; }
+  .tag { font-size: 11px; padding: 1px 6px; border-radius: 20px; background: var(--chip); color: var(--muted); }
+  .tag.unreliable { color: var(--accent); }
+
+  #map { height: 100%; }
+  .maplibregl-popup-content {
+    background: var(--bg); color: var(--fg); font: inherit; font-size: 13px;
+    border-radius: 8px; padding: 10px 12px; max-width: 260px;
+  }
+  .maplibregl-popup-content strong { display: block; margin-bottom: 2px; }
+  .maplibregl-popup-close-button { color: var(--muted); font-size: 16px; }
+
+  #legend {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    padding: 8px 16px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted);
+  }
+  #legend span { display: flex; align-items: center; gap: 4px; }
+  footer { padding: 8px 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+
+<div id="panel">
+  <header>
+    <h1 id="city">Loading…</h1>
+    <div class="meta" id="summary"></div>
+  </header>
+  <div class="controls">
+    <select id="citySelect"></select>
+    <select id="categorySelect"><option value="">All categories</option></select>
+    <button id="rankedToggle">Ranked only</button>
+  </div>
+  <ol id="list"></ol>
+  <div id="legend"></div>
+  <footer>
+    POI data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors (ODbL) ·
+    ranking from <a href="https://www.wikidata.org">Wikidata</a> ·
+    tiles © <a href="https://openfreemap.org">OpenFreeMap</a>
+  </footer>
+</div>
+<div id="map"></div>
+
+<script>
+const CITIES = ["vancouver-british-columbia", "detroit-michigan"];
+
+// The pipeline emits ~23 categories, far more than a categorical palette can carry
+// legibly. They collapse into six families that a reader can hold at once.
+const FAMILIES = [
+  { key: "culture",  color: "#7c3aed", label: "Culture",   of: ["museum", "gallery", "arts_centre", "theatre"] },
+  { key: "heritage", color: "#b45309", label: "Heritage",  of: ["castle", "palace", "fortification", "monument", "archaeology", "religious", "industrial"] },
+  { key: "outdoors", color: "#15803d", label: "Outdoors",  of: ["park", "garden", "nature", "viewpoint"] },
+  { key: "art",      color: "#db2777", label: "Public art",of: ["artwork"] },
+  { key: "leisure",  color: "#0891b2", label: "Leisure",   of: ["zoo", "theme_park", "aquarium", "stadium"] },
+  { key: "landmark", color: "#2563eb", label: "Landmark",  of: ["landmark", "bridge", "attraction"] },
+];
+const FAMILY_OF = Object.fromEntries(FAMILIES.flatMap(f => f.of.map(c => [c, f])));
+const fallback = FAMILIES.at(-1);
+const familyFor = (category) => FAMILY_OF[category] ?? fallback;
+
+const state = { data: null, ready: false, rankedOnly: true, category: "", popup: null };
+const el = (id) => document.getElementById(id);
+
+const map = new maplibregl.Map({
+  container: "map",
+  style: "https://tiles.openfreemap.org/styles/positron",
+  center: [-83.05, 42.33],
+  zoom: 11,
+});
+map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+/**
+ * Everything the current city and ranked filter allow, before any category choice.
+ *
+ * The category control is built from this rather than from the full dataset, so it can
+ * only ever offer a choice that yields results — with "Ranked only" on, most categories
+ * have no ranked POI at all and would select an empty list.
+ */
+function candidates() {
+  return state.data.pois.filter((p) => !state.rankedOnly || p.ranking === "sitelinks");
+}
+
+function visible() {
+  return candidates().filter((p) => !state.category || p.category === state.category);
+}
+
+function syncControls() {
+  const pool = candidates();
+  const categories = [...new Set(pool.map((p) => p.category))].sort();
+
+  // A category that vanished when the ranked filter changed cannot stay selected.
+  if (state.category && !categories.includes(state.category)) state.category = "";
+
+  const counts = new Map();
+  for (const poi of pool) counts.set(poi.category, (counts.get(poi.category) ?? 0) + 1);
+  el("categorySelect").innerHTML =
+    `<option value="">All categories (${pool.length})</option>` +
+    categories.map((c) =>
+      `<option value="${c}"${c === state.category ? " selected" : ""}>${c} (${counts.get(c)})</option>`).join("");
+
+  // The legend tracks the city and ranked filter but deliberately ignores the category
+  // choice, so it stays a stable colour reference instead of collapsing to one entry.
+  const present = new Set(pool.map((p) => familyFor(p.category).key));
+  el("legend").innerHTML = FAMILIES.filter((f) => present.has(f.key))
+    .map((f) => `<span><span class="swatch" style="background:${f.color}"></span>${f.label}</span>`)
+    .join("");
+}
+
+function asGeoJSON(pois) {
+  return {
+    type: "FeatureCollection",
+    features: pois.map((p, index) => ({
+      type: "Feature",
+      id: index,
+      geometry: { type: "Point", coordinates: [p.lon, p.lat] },
+      properties: {
+        index,
+        label: p.label,
+        description: p.description ?? "",
+        category: p.category,
+        color: familyFor(p.category).color,
+        sitelinks: p.sitelinks ?? 0,
+        // Sizes the mark so prominence is legible before anything is clicked.
+        weight: p.sitelinks >= 20 ? 3 : p.sitelinks >= 10 ? 2 : 1,
+      },
+    })),
+  };
+}
+
+function installLayers() {
+  map.addSource("pois", {
+    type: "geojson",
+    data: { type: "FeatureCollection", features: [] },
+    cluster: true,
+    clusterRadius: 44,
+    // Clusters only below city zoom. At 15 — and even at 12 — every pin stayed a grey
+    // bubble across the whole normal viewing range, so the categorical colours the
+    // legend advertises were never actually on screen.
+    clusterMaxZoom: 9,
+  });
+
+  map.addLayer({
+    id: "clusters", type: "circle", source: "pois", filter: ["has", "point_count"],
+    paint: {
+      "circle-color": "#4b5563",
+      "circle-opacity": 0.9,
+      "circle-radius": ["step", ["get", "point_count"], 14, 10, 18, 30, 23],
+      "circle-stroke-width": 2,
+      "circle-stroke-color": "#ffffff",
+    },
+  });
+  map.addLayer({
+    id: "cluster-count", type: "symbol", source: "pois", filter: ["has", "point_count"],
+    layout: { "text-field": ["get", "point_count_abbreviated"], "text-size": 12 },
+    paint: { "text-color": "#ffffff" },
+  });
+
+  // A native circle rather than a symbol with a generated SDF icon. An SDF encodes
+  // distance-to-edge in its alpha channel and fails invisibly if the image is not
+  // built as one — a whole class of failure that a circle layer simply does not have,
+  // while still supporting data-driven colour and radius.
+  map.addLayer({
+    id: "poi", type: "circle", source: "pois", filter: ["!", ["has", "point_count"]],
+    paint: {
+      "circle-color": ["get", "color"],
+      "circle-radius": ["interpolate", ["linear"], ["zoom"],
+        10, ["match", ["get", "weight"], 3, 5, 2, 4, 3],
+        16, ["match", ["get", "weight"], 3, 10, 2, 8, 6]],
+      "circle-stroke-color": "#ffffff",
+      "circle-stroke-width": 1.5,
+    },
+  });
+
+  // Labels are their own layer so the marks always draw. A colliding label simply
+  // yields, and its dot stays — a POI is never silently absent because its name did
+  // not fit.
+  map.addLayer({
+    id: "poi-label", type: "symbol", source: "pois", filter: ["!", ["has", "point_count"]],
+    minzoom: 12,
+    layout: {
+      "text-field": ["get", "label"],
+      "text-size": ["match", ["get", "weight"], 3, 13, 2, 12, 11],
+      "text-anchor": "top",
+      "text-offset": [0, 0.7],
+      "text-max-width": 9,
+      "symbol-sort-key": ["-", 0, ["get", "sitelinks"]],
+    },
+    paint: {
+      "text-color": "#1f2937",
+      "text-halo-color": "#ffffff",
+      "text-halo-width": 1.4,
+    },
+  });
+
+  // Symbol layers have no DOM element, so the CSS cursor rule that worked for markers
+  // does not apply — hover state comes from the layer instead.
+  for (const layer of ["poi", "clusters"]) {
+    map.on("mouseenter", layer, () => { map.getCanvas().style.cursor = "pointer"; });
+    map.on("mouseleave", layer, () => { map.getCanvas().style.cursor = ""; });
+  }
+
+  map.on("click", "poi", (event) => {
+    const feature = event.features[0];
+    select(state.data.pois[feature.properties.index], { fly: false });
+  });
+
+  map.on("click", "clusters", (event) => {
+    const feature = map.queryRenderedFeatures(event.point, { layers: ["clusters"] })[0];
+    map.getSource("pois").getClusterExpansionZoom(feature.properties.cluster_id).then((zoom) => {
+      map.easeTo({ center: feature.geometry.coordinates, zoom });
+    });
+  });
+}
+
+function render() {
+  syncControls();
+  const pois = visible();
+  const list = el("list");
+  list.innerHTML = "";
+
+  for (const poi of pois) {
+    const family = familyFor(poi.category);
+    const item = document.createElement("li");
+    item.dataset.index = state.data.pois.indexOf(poi);
+    item.innerHTML = `
+      <div class="rank">${poi.sitelinks ?? "–"}</div>
+      <div class="body">
+        <div class="name"><span class="swatch" style="background:${family.color}"></span><span></span></div>
+        <div class="sub"></div>
+        <div class="tags">
+          <span class="tag">${poi.category}</span>
+          <span class="tag">${poi.distance_from_centre_km.toFixed(1)} km</span>
+          ${poi.coordinate_source === "bbox_centre" ? '<span class="tag unreliable">approx. position</span>' : ""}
+        </div>
+      </div>`;
+    item.querySelector(".name span:last-child").textContent = poi.label;
+    item.querySelector(".sub").textContent = poi.description ?? "";
+    item.addEventListener("click", () => select(poi, { fly: true }));
+    list.appendChild(item);
+  }
+
+  if (state.ready) {
+    map.getSource("pois").setData(asGeoJSON(pois));
+    if (pois.length) {
+      // Frame the core, not the whole search radius. Fitting every POI pulls the view
+      // out to the metro — 25 km of Vancouver reaches Port Moody — which both hides the
+      // city itself and puts the map below the zoom where clusters break apart.
+      // Outliers stay in the list, and clicking one flies to it.
+      const sorted = [...pois].sort((a, b) => a.distance_from_centre_km - b.distance_from_centre_km);
+      const core = sorted.slice(0, Math.max(1, Math.ceil(sorted.length * 0.8)));
+      const bounds = new maplibregl.LngLatBounds();
+      for (const p of core) bounds.extend([p.lon, p.lat]);
+      map.fitBounds(bounds, { padding: 60, maxZoom: 14, duration: 0 });
+    }
+  }
+
+  el("summary").textContent =
+    `${pois.length} shown · ${state.data.pois.length} total · extract ${state.data.generated_from_extract.slice(0, 10)}`;
+}
+
+function select(poi, { fly }) {
+  const index = state.data.pois.indexOf(poi);
+  for (const node of document.querySelectorAll("#list li")) {
+    node.classList.toggle("active", Number(node.dataset.index) === index);
+  }
+  const node = document.querySelector(`#list li[data-index="${index}"]`);
+  if (node) node.scrollIntoView({ block: "nearest" });
+
+  state.popup?.remove();
+  state.popup = new maplibregl.Popup({ offset: 14, closeButton: true })
+    .setLngLat([poi.lon, poi.lat])
+    .setHTML(`<strong>${escapeHtml(poi.label)}</strong>${escapeHtml(poi.description ?? "")}`)
+    .addTo(map);
+
+  if (fly) map.flyTo({ center: [poi.lon, poi.lat], zoom: Math.max(map.getZoom(), 15) });
+}
+
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+}
+
+async function load(slug) {
+  const reply = await fetch(`../cities/${slug}.json`);
+  state.data = await reply.json();
+  el("city").textContent = state.data.city.display_name.split(",")[0];
+
+  state.category = "";
+  state.popup?.remove();
+  render();
+}
+
+el("citySelect").innerHTML = CITIES.map((c) => `<option value="${c}">${c}</option>`).join("");
+el("citySelect").addEventListener("change", (e) => load(e.target.value));
+el("categorySelect").addEventListener("change", (e) => { state.category = e.target.value; render(); });
+el("rankedToggle").addEventListener("click", (e) => {
+  state.rankedOnly = !state.rankedOnly;
+  e.target.textContent = state.rankedOnly ? "Ranked only" : "All POIs";
+  render();
+});
+
+// Data loads independently of the map: a slow or unreachable basemap must not leave
+// the list — which is the actual product — empty.
+map.on("style.load", () => {
+  if (!new URLSearchParams(location.search).has("nolayers")) installLayers();
+  state.ready = true;
+  if (state.data) render();
+});
+map.on("error", (e) => console.warn("map:", e.error?.message ?? e));
+
+load(CITIES[0]);
+</script>
+</body>
+</html>

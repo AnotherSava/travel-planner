@@ -1,0 +1,224 @@
+{
+ "city": "detroit-michigan",
+ "compiled": "2026-08-04",
+ "sources": [
+  "Fodor's Travel — \"17 Best Sights in Detroit\" (https://fodors.com/world/north-america/usa/michigan/detroit/things-to-do/sights) — 13 Fodor's Choice picks, with street addresses that make the Dearborn/Royal Oak municipality splits explicit",
+  "Lonely Planet — \"The 20 best things to do in Detroit\" (https://www.lonelyplanet.com/articles/top-things-to-do-in-detroit) and its Detroit attractions index (Eastern Market, DIA, Fisher Building as the three lead attractions; Heidelberg Project #11, street art #12)",
+  "Time Out Detroit — \"The 20 best things to do in Detroit\" (https://timeout.com/detroit/things-to-do/best-things-to-do-in-detroit) — full ordered list retrieved: Motown #1, Corktown #2, RiverWalk #4, Heidelberg #5, Henry Ford Museum #6 (West Dearborn), Eastern Market #8, DIA #9",
+  "Visit Detroit (official DMO for Detroit metro) — \"Detroit's Must See Attractions\" (https://visitdetroit.com/itinerary/detroit-popular-attractions/) and \"Detroit Mural Guide\" (https://visitdetroit.com/inside-the-d/detroit-mural-guide/)",
+  "Tripadvisor — \"THE 15 BEST Things to Do in Detroit\" (https://www.tripadvisor.com/Attractions-g42139-Activities-Detroit_Michigan.html) — ranked 1-15",
+  "U.S. News Travel — \"14 Best Things to Do in Detroit\" (https://travel.usnews.com/Detroit_MI/Things_To_Do/)",
+  "Michigan.org / Pure Michigan (official Michigan state tourism) — Detroit city page (https://www.michigan.org/city/detroit): DIA, Henry Ford Museum, Detroit Zoo, Belle Isle named as the top four",
+  "Frommer's — Detroit things to do / introduction (https://www.frommers.com/destinations/detroit/things-to-do/) — Cultural Center cluster, Rouge plant tour, Ford family mansions, Eastern Market, Detroit Zoo",
+  "The Henry Ford press room — attendance releases (https://www.thehenryford.org/about/press-room/press-releases/) — ~1.8M annual visitors across Henry Ford Museum, Greenfield Village, Ford Rouge Factory Tour",
+  "The Detroit News — \"Michigan Central to re-open in Corktown after 36 years\" (June 6, 2024 reopening) and michigancentral.com",
+  "Wikipedia — Detroit Zoo (https://en.wikipedia.org/wiki/Detroit_Zoo): zoo lies in Royal Oak and Huntington Woods, ~2 miles north of the Detroit city limit, city-owned but not city-located",
+  "OpenStreetMap Overpass API (overpass-api.de and overpass.kumi.systems) — live tag queries run against the Detroit metro bbox to verify actual tagging rather than guess it"
+ ],
+ "boundary_verdict": "A Detroit city-proper municipal boundary is VIABLE BUT DECAPITATING — usable as a base geometry, fatal if used alone. 16 of 20 oracle entries (80%) fall inside the City of Detroit boundary; 4 fall outside, and they are disproportionately top-tier. The #1 draw by every independent measure — The Henry Ford campus (Henry Ford Museum of American Innovation + Greenfield Village + Ford Rouge Factory Tour, ~1.8M visitors/yr, Michigan's most-visited attraction, named by Michigan.org, Frommer's, Fodor's Choice, Time Out #6, U.S. News, Lonely Planet) — is in DEARBORN, ~15.5 km west of downtown. The Detroit Zoo, despite the name and despite being owned by the City of Detroit, is in ROYAL OAK/Huntington Woods (Oakland County), ~18 km out and ~3 km north of the 8 Mile boundary. Cranbrook is in BLOOMFIELD HILLS, ~32 km out. So a city-proper query silently drops the single entry a visitor would most regret missing, plus two more that appear on the state tourism board's own four-item shortlist. Belle Isle is the counter-case that a naive \"state park = not city\" heuristic gets wrong: it is a Michigan DNR-operated state park but lies wholly INSIDE the Detroit municipal boundary (Wayne County), ~5.5 km from downtown, and must be retained. A radius fix is poor: 16 km captures Dearborn but not the Zoo; 18 km captures the Zoo but not Cranbrook; 35 km captures Cranbrook but sweeps in most of Oakland and Macomb County suburbia (Somerset Collection, Birmingham, Troy) that no guidebook ranks. The correct boundary is the DMO's own footprint — City of Detroit plus explicit named-municipality inclusion of Dearborn, Royal Oak/Huntington Woods, Bloomfield Hills (and, for a longer list, Grosse Pointe Shores for the Edsel & Eleanor Ford House). Visit Detroit itself markets the tri-county Wayne/Oakland/Macomb region, not the city polygon. Verdict: scoring a pipeline on Detroit city-proper alone caps achievable recall at ~80% and guarantees the miss of rank #1 and #4.",
+ "category_profile": "Detroit's recall problem is a TAGGING problem more than a geometry problem, and the failure mode is specific: the city's biggest draws are industrial heritage, Motown, skyscraper architecture, and public art — none of which a European-derived whitelist (castle/cathedral/palace/museum/viewpoint) reliably reaches. Verified against live Overpass data:\n\nTAGGED AND SAFE (7/20, all tourism=museum-family): DIA, Motown Museum, Charles H. Wright, Ford Piquette, Henry Ford Museum, Greenfield Village, Detroit Zoo (tourism=zoo), plus Guardian Building and Heidelberg Project on tourism=attraction. A museum+zoo+attraction whitelist gets these nine.\n\nOUTRIGHT UNTAGGED — carry a Wikidata QID but NO primary attraction tag (6/20, ~30% of the oracle): Michigan Central Station (building=train_station only), Renaissance Center (building=commercial only), Fisher Building (building=office only), Ambassador Bridge (bridge=yes on the carriageway ways only), Eastern Market (place=neighbourhood + landuse=commercial, no marketplace tag), Detroit RiverWalk (fifteen highway=path/cycleway ways, no named entity, no route relation). These are unreachable by any tourism/historic/leisure predicate and only recoverable via a wikidata-presence or building-name heuristic.\n\nTAGGED BUT OFF-WHITELIST (5/20): Spirit of Detroit and Monument to Joe Louis are tourism=artwork — correct OSM practice, but artwork is the tag most commonly dropped from attraction whitelists, and Detroit's mural/public-art culture (Murals in the Market, Grand River Creative Corridor, The Belt, Dequindre Cut's 35+ pieces, Dabls MBAD Bead Museum) lives almost entirely under tourism=artwork or nothing at all. Fox Theatre is amenity=theatre with no tourism or historic tag. Comerica Park/Ford Field/Little Caesars Arena are leisure=stadium. Belle Isle — the #1 in-city green space — is leisure=nature_reserve + place=island, not leisure=park and not tourism=*, so both a park query and an attraction query miss the island itself while catching only its Conservatory and Aquarium.\n\nPractical implication: a pipeline restricted to tourism=museum|attraction|zoo|aquarium|viewpoint scores roughly 9-11/20 on Detroit. Adding tourism=artwork, amenity=theatre, leisure=stadium, leisure=nature_reserve and a Wikidata-QID-on-building fallback is what moves it past 15 — and only widening the municipal boundary past the city line moves it past 16.",
+ "entries": [
+  {
+   "name": "Henry Ford Museum of American Innovation (The Henry Ford)",
+   "municipality": "Dearborn",
+   "inside_city": false,
+   "km_from_centre": 15.5,
+   "osm": [
+    "way/101385278"
+   ],
+   "tagging_note": "tourism=museum (verified: OSM way 101385278 \"The Henry Ford\", wikidata=Q3521242) — correctly tagged, but 15 km outside the Detroit boundary"
+  },
+  {
+   "name": "Detroit Institute of Arts (DIA) — Diego Rivera Detroit Industry Murals",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 3.5,
+   "osm": [
+    "relation/1553447"
+   ],
+   "tagging_note": "tourism=museum + museum=art (verified: OSM relation 1553447, wikidata=Q1201549); a stray duplicate node also carries amenity=arts_centre"
+  },
+  {
+   "name": "Motown Museum (Hitsville U.S.A.)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 5.1,
+   "osm": [
+    "way/105533840"
+   ],
+   "tagging_note": "tourism=museum on the building (verified: OSM way 105533840, wikidata=Q1987935) — correctly tagged"
+  },
+  {
+   "name": "Greenfield Village",
+   "municipality": "Dearborn",
+   "inside_city": false,
+   "km_from_centre": 15.2,
+   "osm": [
+    "way/101397654"
+   ],
+   "tagging_note": "tourism=museum + museum=living_history + historic=yes (verified: OSM way 101397654) — correctly tagged, outside the boundary"
+  },
+  {
+   "name": "Eastern Market historic market district (and its Murals in the Market street art)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 1.9,
+   "osm": [
+    "node/5612650865",
+    "way/581362401"
+   ],
+   "tagging_note": "untagged — verified: only place=neighbourhood (node 5612650865) and landuse=commercial (way 581362401); the market sheds themselves carry no tourism/amenity=marketplace primary tag"
+  },
+  {
+   "name": "Belle Isle Park (with Anna Scripps Whitcomb Conservatory, Belle Isle Aquarium, James Scott Fountain)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 5.5,
+   "osm": [
+    "relation/14903749",
+    "way/107310050",
+    "way/107227742"
+   ],
+   "tagging_note": "island itself is leisure=nature_reserve + place=island (verified: OSM relation 14903749, wikidata=Q458588) — NOT leisure=park or tourism=*, so a park/attraction whitelist misses the headline feature; sub-POIs are fine (Conservatory tourism=attraction way 107310050, Aquarium tourism=aquarium way 107227742)"
+  },
+  {
+   "name": "Charles H. Wright Museum of African American History",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 3.5,
+   "osm": [
+    "way/68957303"
+   ],
+   "tagging_note": "tourism=museum + museum=history (verified: OSM way 68957303, wikidata=Q5078673) — correctly tagged"
+  },
+  {
+   "name": "Michigan Central Station (Michigan Central, reopened June 2024)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 2.6,
+   "osm": [
+    "way/805151309",
+    "node/7745389962"
+   ],
+   "tagging_note": "untagged — verified: way 805151309 has only building=train_station + wikidata=Q1764199, plus a bare node 7745389962 with wikidata alone. No tourism/historic primary tag despite being Detroit's signature landmark"
+  },
+  {
+   "name": "Guardian Building (Art Deco \"Cathedral of Finance\", NHL)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 0.3,
+   "osm": [
+    "way/330839648"
+   ],
+   "tagging_note": "tourism=attraction + historic=building + heritage=yes (verified: OSM way 330839648, wikidata=Q3079894) — one of the few Detroit buildings tagged as an attraction"
+  },
+  {
+   "name": "Detroit International RiverWalk (Detroit riverfront, incl. Ralph C. Wilson Jr. Centennial Park)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 1,
+   "osm": [],
+   "tagging_note": "untagged as an attraction — verified: ~15 separate ways named \"Detroit Riverwalk\" carry only highway=path / highway=cycleway / highway=footway. No route relation, no tourism=attraction, no single named entity to retrieve"
+  },
+  {
+   "name": "Detroit Zoo",
+   "municipality": "Royal Oak (property extends into Huntington Woods)",
+   "inside_city": false,
+   "km_from_centre": 18,
+   "osm": [
+    "relation/1540462"
+   ],
+   "tagging_note": "tourism=zoo (verified: OSM relation 1540462, wikidata=Q3576018) — correctly tagged, but ~3 km north of Detroit's 8 Mile boundary; owned by the City of Detroit, located in Oakland County"
+  },
+  {
+   "name": "Ford Piquette Avenue Plant (Model T birthplace, NHL)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 4.9,
+   "osm": [
+    "way/59028739"
+   ],
+   "tagging_note": "tourism=museum + building=industrial (verified: OSM way 59028739, wikidata=Q7197543) — correctly tagged"
+  },
+  {
+   "name": "The Heidelberg Project (Tyree Guyton outdoor art environment)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 3.7,
+   "osm": [
+    "node/4919962937"
+   ],
+   "tagging_note": "tourism=attraction (verified: node 4919962937, wikidata=Q3178970) plus individual tourism=artwork installations — retrievable, but only as a point, not the multi-block site"
+  },
+  {
+   "name": "Fox Theatre (1928 Howard Crane movie palace, NHL)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 1,
+   "osm": [
+    "node/6150469184"
+   ],
+   "tagging_note": "amenity=theatre only (verified: node 6150469184, wikidata=Q3080199) — no tourism=* or historic=*, so a tourism-tag whitelist misses it; venue-type whitelists catch it"
+  },
+  {
+   "name": "GM Renaissance Center (Detroit skyline icon, riverfront tower complex)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 0.6,
+   "osm": [
+    "relation/10011997",
+    "way/419447165"
+   ],
+   "tagging_note": "untagged — verified: relation 10011997 has only building=commercial + wikidata=Q1541365; individual towers are bare building ways; the only tourism=* in the complex is the Marriott hotel (way 419447165)"
+  },
+  {
+   "name": "Fisher Building (Albert Kahn 1928 Art Deco masterpiece, \"Detroit's largest art object\", NHL)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 5,
+   "osm": [
+    "way/112057847"
+   ],
+   "tagging_note": "untagged — verified: way 112057847 has only building=office + wikidata=Q933431. A Lonely Planet lead attraction with no attraction tag at all"
+  },
+  {
+   "name": "The Spirit of Detroit (Marshall Fredericks bronze, Spirit of Detroit Plaza)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 0.2,
+   "osm": [
+    "node/1293799469"
+   ],
+   "tagging_note": "tourism=artwork + artwork_type=statue (verified: node 1293799469, wikidata=Q7765934) — correctly tagged, but tourism=artwork is routinely excluded from European-style attraction whitelists"
+  },
+  {
+   "name": "Ambassador Bridge (1929 Detroit–Windsor international suspension crossing)",
+   "municipality": "Detroit (US landing/approach; span crosses to Windsor, Ontario, Canada)",
+   "inside_city": true,
+   "km_from_centre": 3.2,
+   "osm": [],
+   "tagging_note": "untagged — verified: ways 4898838 and 37319544 carry only bridge=yes on the carriageway plus wikidata=Q12575. No man_made=bridge entity, no tourism/historic tag"
+  },
+  {
+   "name": "Cranbrook (Cranbrook Art Museum, Cranbrook House & Gardens, Saarinen campus, NHL)",
+   "municipality": "Bloomfield Hills",
+   "inside_city": false,
+   "km_from_centre": 32,
+   "osm": [
+    "node/9174991325",
+    "node/5425918663"
+   ],
+   "tagging_note": "tourism=museum on the component POIs (verified: node 9174991325 Cranbrook Art Museum, node 5425918663 Cranbrook House and Gardens); the campus as a whole has no single attraction entity — and it sits 32 km out in Oakland County"
+  },
+  {
+   "name": "Monument to Joe Louis (\"The Fist\", Robert Graham, Hart Plaza / Jefferson at Woodward)",
+   "municipality": "Detroit",
+   "inside_city": true,
+   "km_from_centre": 0.3,
+   "osm": [
+    "node/1216215953"
+   ],
+   "tagging_note": "tourism=artwork + historic=memorial + artwork_type=sculpture (verified: node 1216215953, wikidata=Q6906877) — correctly tagged, but again only under tourism=artwork"
+  }
+ ]
+}

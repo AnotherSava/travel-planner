@@ -1,0 +1,38 @@
+[project]
+name = "travel-planner"
+version = "0.1.0"
+description = "Ranked, mapped shortlists of notable places in a city, built from OpenStreetMap"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Oleg Savelyev", email = "oleg.savelev@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28",
+    "pydantic>=2.10",
+    "shapely>=2.0",
+]
+
+[project.scripts]
+travel = "travel_planner.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.9",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

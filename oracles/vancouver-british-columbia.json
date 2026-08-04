@@ -1,0 +1,138 @@
+{
+ "city": "vancouver-british-columbia",
+ "compiled": "2026-08-04",
+ "sources": [
+  "destinationvancouver.com 10 Must-See Attractions",
+  "timeout.com Vancouver 17 must-see + 21 best things to do",
+  "tripadvisor.com Vancouver top attractions ranking",
+  "fodors.com Vancouver Sights (Fodor's Choice)",
+  "lonelyplanet.com top things to do in Vancouver",
+  "OSM Overpass API + Nominatim (tag verification)"
+ ],
+ "boundary_verdict": "Only 11 of 15 sit inside the City of Vancouver. Capilano, Grouse, Lynn Canyon, Deep Cove are District of North Vancouver; Cypress and Lions Gate's north end are West Vancouver. MOA, Nitobe and Wreck Beach are UBC/University Endowment Lands, unincorporated Electoral Area A. Near-misses: Art Gallery, Science World, Kits Beach, BC Place.",
+ "entries": [
+  {
+   "name": "Stanley Park",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [
+    "way/37063023"
+   ],
+   "tagging_note": "leisure=park + boundary=protected_area (way 37063023)"
+  },
+  {
+   "name": "Stanley Park Seawall",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [],
+   "tagging_note": "untagged - split into highway=footway / highway=cycleway ways only, no tourism/leisure primary tag"
+  },
+  {
+   "name": "Granville Island & Public Market",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [
+    "relation/7071553"
+   ],
+   "tagging_note": "island: natural=peninsula + landuse=retail; market: amenity=marketplace (rel 7071553)"
+  },
+  {
+   "name": "Capilano Suspension Bridge Park",
+   "municipality": "District of North Vancouver",
+   "inside_city": false,
+   "osm": [],
+   "tagging_note": "park: leisure=nature_reserve; bridge itself: highway=footway + tourism=attraction"
+  },
+  {
+   "name": "Grouse Mountain",
+   "municipality": "District of North Vancouver",
+   "inside_city": false,
+   "osm": [],
+   "tagging_note": "landuse=winter_sports + natural=peak; Skyride base node tourism=attraction, aerialway=station"
+  },
+  {
+   "name": "Museum of Anthropology at UBC",
+   "municipality": "UBC / Electoral Area A",
+   "inside_city": false,
+   "osm": [
+    "way/33176178"
+   ],
+   "tagging_note": "tourism=museum + building=yes (way 33176178)"
+  },
+  {
+   "name": "Gastown & the Steam Clock",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [],
+   "tagging_note": "Gastown: place=neighbourhood (untagged as attraction); clock: amenity=clock + historic=monument + tourism=attraction"
+  },
+  {
+   "name": "Vancouver Aquarium",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [
+    "way/58305151"
+   ],
+   "tagging_note": "tourism=aquarium (way 58305151)"
+  },
+  {
+   "name": "Dr. Sun Yat-Sen Classical Chinese Garden",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [],
+   "tagging_note": "leisure=garden; adjacent free Dr Sun Yat-Sen Park is leisure=park"
+  },
+  {
+   "name": "VanDusen Botanical Garden",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [
+    "way/316008597"
+   ],
+   "tagging_note": "leisure=garden (garden:type=botanical) (way 316008597)"
+  },
+  {
+   "name": "Canada Place",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [
+    "way/223635729"
+   ],
+   "tagging_note": "tourism=attraction + building=yes (way 223635729)"
+  },
+  {
+   "name": "Brockton Point Totem Poles",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [
+    "node/6089367725"
+   ],
+   "tagging_note": "tourism=artwork + artwork_type=carving (node 6089367725)"
+  },
+  {
+   "name": "Queen Elizabeth Park & Bloedel Conservatory",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [],
+   "tagging_note": "park: leisure=park; conservatory: leisure=garden + building=conservatory"
+  },
+  {
+   "name": "English Bay Beach",
+   "municipality": "Vancouver",
+   "inside_city": true,
+   "osm": [
+    "way/86340299"
+   ],
+   "tagging_note": "natural=beach (way 86340299); no tourism tag"
+  },
+  {
+   "name": "Wreck Beach",
+   "municipality": "UBC / Electoral Area A",
+   "inside_city": false,
+   "osm": [
+    "way/36812352"
+   ],
+   "tagging_note": "natural=beach (way 36812352); no tourism tag"
+  }
+ ]
+}

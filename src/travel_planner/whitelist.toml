@@ -1,0 +1,287 @@
+# Which OSM elements count as "worth seeing", and what to call them.
+#
+# This file is a first-class project asset, not a constant. No community-standard
+# list exists to import: the OSM wiki explicitly declines to define one, and the
+# de-facto taxonomies that exist (OsmAnd categories, OpenTripMap kinds) are product
+# artifacts rather than normative. So every value here is a judgement with a reason,
+# and every change is a reviewable diff.
+#
+# THREE RULES THE STRUCTURE ENFORCES
+#
+# 1. `[[select]]` entries are SELECTION predicates, never rejections. The query is an
+#    OR-union, so an element enters on one matching tag and brings all its other tags
+#    with it. Implementing "exclude historic=yes" as a reject-if-present filter
+#    deletes Teatro Nacional Dona Maria II, a genuine top-25 Lisbon POI that arrived
+#    via amenity=theatre. Unwanted values are simply never selected.
+#
+# 2. `category_precedence` is separate and ordered, because an element can satisfy
+#    several predicates at once — Torre de Belém is tourism=attraction AND historic=fort.
+#
+# 3. `[prominence]` is a SECOND selection path that does not consult this whitelist at
+#    all. No tag predicate can reach Michigan Central Station, Renaissance Center, the
+#    Ambassador Bridge or Lions Gate Bridge: OSM contributors tagged them as buildings
+#    and bridges, not attractions. All four carry a Wikidata QID. Measured, the whitelist
+#    selects only 19% of Detroit's and 9.3% of Vancouver's named QID-bearing features —
+#    the predicates and the ranking signal point at different populations. The prominence
+#    path closes that gap.
+#
+# PER-CITY TUNING IS EXPECTED. Each city surfaces a different dominant polluter:
+# Paris was 17% trail signage, Lisbon 18% private palacetes, Detroit 79% non-notable
+# churches. Values here are tuned against Paris, Prague, Kyoto, Mexico City, Marrakesh,
+# Lisbon, Detroit and Vancouver.
+
+require_name = true
+
+category_precedence = [
+  "museum",
+  "gallery",
+  "castle",
+  "palace",
+  "fortification",
+  "religious",
+  "monument",
+  "archaeology",
+  "theatre",
+  "arts_centre",
+  "zoo",
+  "theme_park",
+  "aquarium",
+  "stadium",
+  "bridge",
+  "viewpoint",
+  "nature",
+  "artwork",
+  "park",
+  "garden",
+  "industrial",
+  "attraction",
+]
+
+# --- A second path, independent of every predicate below ----------------------
+[prominence]
+# Select any named element carrying a Wikidata QID, whatever its tags, and let the
+# sitelink ranking decide. Detroit has 870 such elements and Vancouver 1,022.
+enabled = true
+
+# Primary keys that are never visitable destinations regardless of fame. Without
+# these the path imports highways, administrative boundaries and neighbourhood
+# polygons, all of which carry QIDs and respectable sitelink counts.
+# `place` is here because the city's own boundary relation carries a QID and outranks
+# everything inside it — "Detroit" scored 174 sitelinks against the Detroit Institute
+# of Arts at 29. Neighbourhoods have the same problem one level down.
+exclude_keys = [
+  "highway",
+  "railway",
+  "waterway",
+  "boundary",
+  "landuse",
+  "power",
+  "barrier",
+  "route",
+  "admin_level",
+  "place",
+  "office",
+  "shop",
+  "craft",
+  "healthcare",
+]
+
+# A QID alone is not prominence. This floor keeps the path from doubling the list
+# with locally-mapped schools and offices; the percentile cut applies on top.
+min_sitelinks = 5
+
+# --- tourism -----------------------------------------------------------------
+# tourism=information is deliberately absent: 36.9% of the whole tourism key and
+# ~95% hiking and trail signage. Accommodation and camping values likewise (25%+).
+
+[[select]]
+key = "tourism"
+values = ["museum"]
+category = "museum"
+
+[[select]]
+key = "tourism"
+values = ["gallery"]
+category = "gallery"
+
+[[select]]
+key = "tourism"
+values = ["zoo"]
+category = "zoo"
+
+[[select]]
+key = "tourism"
+values = ["theme_park"]
+category = "theme_park"
+
+[[select]]
+key = "tourism"
+values = ["aquarium"]
+category = "aquarium"
+
+[[select]]
+key = "tourism"
+values = ["viewpoint"]
+category = "viewpoint"
+
+# Public art is a headline category in North America and was being dropped wholesale.
+# Detroit has 81 named artworks including The Spirit of Detroit and Monument to Joe
+# Louis — two of the three most-photographed objects in the city. Vancouver has 227,
+# more than its entire previous whitelist yield. A Wikidata gate cannot be the
+# discriminator here (only 4 of 81 and 18 of 227 carry one); artwork_type can.
+[[select]]
+key = "tourism"
+values = ["artwork"]
+category = "artwork"
+requires_any_value = { artwork_type = ["sculpture", "statue", "mural", "installation", "totem_pole", "bust", "relief", "stele"] }
+
+# The vaguest tag in the set. In Lisbon its 202 elements included 41 fountains,
+# 17 ponds, 11 individual street trees and 5 bare rocks.
+[[select]]
+key = "tourism"
+values = ["attraction"]
+category = "attraction"
+reject_when = { natural = ["tree", "water", "bare_rock", "spring", "rock", "stone"] }
+
+# --- historic ----------------------------------------------------------------
+# historic=yes is absent because it carries no information; elements holding it still
+# arrive through other predicates. wayside_cross, wayside_shrine, boundary_stone,
+# tomb, milestone, charcoal_pile and bomb_crater are absent as micro-features.
+
+[[select]]
+key = "historic"
+values = ["castle"]
+category = "castle"
+# 185 of 1,032 Lisbon elements were historic=castle; almost none were castles. Detroit's
+# single one is "James D. Standish Jr. House". castle_type is the discriminating tag.
+reject_when = { castle_type = ["palace", "stately", "manor"], building = ["house", "residential", "apartments"] }
+
+[[select]]
+key = "historic"
+values = ["palace", "manor"]
+category = "palace"
+requires_any_tag = ["wikidata", "wikipedia"]
+
+[[select]]
+key = "historic"
+values = ["city_gate", "citywalls", "fort", "tower"]
+category = "fortification"
+
+[[select]]
+key = "historic"
+values = ["monument"]
+category = "monument"
+
+# historic=memorial is 22% of the historic key and its single biggest polluter in
+# Europe — but it is also where North American civic monuments live. Gated rather than
+# excluded, which keeps the notable ones without importing every plaque.
+[[select]]
+key = "historic"
+values = ["memorial"]
+category = "monument"
+requires_any_tag = ["wikidata", "wikipedia", "heritage", "ref:nrhp"]
+
+[[select]]
+key = "historic"
+values = ["archaeological_site"]
+category = "archaeology"
+requires_any_tag = ["wikidata", "wikipedia"]
+
+[[select]]
+key = "historic"
+values = ["monastery"]
+category = "religious"
+
+# Detroit's draw is substantially industrial heritage. Only one element carries this
+# tag there (the Packard Automotive Plant), so it is cheap and ungated.
+[[select]]
+key = "historic"
+values = ["industrial"]
+category = "industrial"
+
+# historic=building is broad; gated to notable instances. Excludes historic=military,
+# which in Detroit is 93 elements that are Fort Wayne decomposing into its own
+# internal structures — a sub-feature explosion, not 93 attractions.
+[[select]]
+key = "historic"
+values = ["building"]
+category = "monument"
+requires_any_tag = ["wikidata", "wikipedia", "heritage", "ref:nrhp"]
+
+# --- amenity -----------------------------------------------------------------
+# The single most important gate in this file. Detroit returns 1,016 place_of_worship
+# elements of which 38 carry any link — 979 non-notable churches would be 79% of the
+# entire city list. Vancouver: 226, of which 11 linked. Heritage designations are
+# included because North American church notability is recorded that way far more
+# often than via Wikidata.
+[[select]]
+key = "amenity"
+values = ["place_of_worship"]
+category = "religious"
+requires_any_tag = ["wikidata", "wikipedia", "heritage", "ref:nrhp", "historic"]
+
+[[select]]
+key = "amenity"
+values = ["theatre"]
+category = "theatre"
+
+[[select]]
+key = "amenity"
+values = ["arts_centre"]
+category = "arts_centre"
+
+# --- leisure -----------------------------------------------------------------
+
+# The Wikidata gate demonstrably selects against the intended signal here: in North
+# America QID presence tracks bulk-import history, not prominence. It admitted Detroit
+# micro-parks (Bradley Playground, Stein Playground, Stoepel Park No. 1) while dropping
+# Ralph C. Wilson Jr. Centennial Park, the city's signature riverfront park. So parks
+# are ungated and filtered by name pattern instead. The right long-term discriminator
+# is polygon area, which needs geometry this query deliberately does not fetch.
+[[select]]
+key = "leisure"
+values = ["park"]
+category = "park"
+reject_name_pattern = "(?i)\\b(playground|play area|tot lot|dog park|skate ?park|ball ?field|community garden)\\b"
+
+# VanDusen's internal plant beds are tagged leisure=garden: "camelias",
+# "ornamental grasses", "Southern Hemisphere". Gated.
+[[select]]
+key = "leisure"
+values = ["garden"]
+category = "garden"
+requires_any_tag = ["wikidata", "wikipedia"]
+
+# BC Place and Rogers Arena. Small counts, no gate needed.
+[[select]]
+key = "leisure"
+values = ["stadium"]
+category = "stadium"
+
+# --- natural and man_made ----------------------------------------------------
+# Vancouver's signature attractions are natural features the whitelist never queried.
+# natural=cape and peninsula are 100% Wikidata-tagged there — the highest-density
+# category in the city was the one category never asked for. A Vancouver list with no
+# beaches is a failing implementation.
+
+[[select]]
+key = "natural"
+values = ["beach", "bay", "cape", "peninsula"]
+category = "nature"
+
+# Peaks are noisy in mountainous regions in a way coastal features are not.
+[[select]]
+key = "natural"
+values = ["peak", "volcano"]
+category = "nature"
+requires_any_tag = ["wikidata", "wikipedia"]
+
+# Lions Gate Bridge and the Ambassador Bridge. Gated because most bridges are
+# infrastructure: 12 of Vancouver's 18 carry a QID and those are the right 12.
+# man_made=pipeline is deliberately absent — 289 elements in Vancouver, which would
+# make water mains the largest category in the city.
+[[select]]
+key = "man_made"
+values = ["bridge", "lighthouse", "tower", "obelisk"]
+category = "bridge"
+requires_any_tag = ["wikidata", "wikipedia"]

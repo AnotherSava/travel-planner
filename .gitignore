@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Generated pipeline output. Fixtures under fixtures/ are tracked deliberately —
+# the acceptance gate runs against them because Overpass has no version pinning.
+cities/
+cache/
