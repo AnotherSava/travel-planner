@@ -57,6 +57,77 @@ def clean_name(value: str) -> str:
     return _ZERO_WIDTH.sub("", value).strip()
 
 
+# Prepositions Wikidata uses to attach the location. A place name is only removed when
+# one of these introduces it, which is what keeps the qualifier in "in Greater
+# Vancouver" — there "Vancouver" is bound to "Greater", not to the preposition.
+_CONNECTIVES = "located in|located at|situated in|situated at|in|at|on|of|near|from"
+
+# A bulk-import artifact that reached the description field of nine Detroit parks:
+# "park in Wayne County, Michigan, United States of America; geonames ID = 4993084".
+# Narrow on purpose — a trailing clause after a semicolon is usually real content, as
+# in "...; adjacent to Dr. Sun Yat-Sen Classical Chinese Garden".
+_IMPORT_ARTIFACT = re.compile(r"\s*;\s*geonames\s+id\s*=\s*\d+\s*$", re.IGNORECASE)
+
+# Countries name themselves several ways across Wikidata descriptions.
+_COUNTRY_ALIASES = {
+    "united states": ("united states", "united states of america", "usa", "u.s.", "us"),
+    "canada": ("canada",),
+}
+
+
+def place_aliases(city: City) -> frozenset[str]:
+    """The place names that identify *this* city, for stripping redundant geography."""
+    address = city.address
+    names = {address.city, address.state, address.county, address.municipality, address.country}
+    aliases = {n.lower() for n in names if n}
+    for country in (address.country, address.country_code):
+        for canonical, variants in _COUNTRY_ALIASES.items():
+            if country and country.lower() in (canonical, *variants):
+                aliases.update(variants)
+    return frozenset(aliases)
+
+
+def clean_description(value: str, aliases: frozenset[str]) -> str:
+    """Drop the trailing "in <city>, <state>, <country>" a Wikidata description carries.
+
+    Wikidata descriptions disambiguate against the whole world, so they name the place
+    every time: 52% of Vancouver's and 66% of Detroit's carry the state or the country.
+    In a list where every row is in the same metropolitan area that suffix is on every
+    line and distinguishes nothing — and it is the subtitle of every pin and every list
+    item in the UI.
+
+    Only a **trailing** run is removed, and only when every comma-separated segment in
+    it names this city. Three real descriptions break anything less careful:
+
+    - ``privately owned suspension bridge that connects Detroit, Michigan, with
+      Windsor, Ontario`` — the geography is the meaning, and it is not at the end.
+    - ``indoor arena in Vancouver, Canada, mainly used for ice hockey`` — the location
+      is mid-string with a meaningful tail after it.
+    - ``1989 mass shooting in Montréal, Canada`` — Montréal must survive; only the
+      country goes.
+
+    A qualified variant is kept for the same reason: ``public research university in
+    Greater Vancouver, British Columbia, Canada`` keeps "Greater Vancouver", which says
+    something "Vancouver" would not.
+    """
+    if not value or not aliases:
+        return value
+
+    value = _IMPORT_ARTIFACT.sub("", value)
+    segments = [s.strip() for s in value.split(",")]
+    while len(segments) > 1 and segments[-1].lower() in aliases:
+        segments.pop()
+
+    head = ", ".join(segments).rstrip(" ,")
+    # Longest alias first, so "United States of America" is not matched as "us".
+    names = "|".join(re.escape(a) for a in sorted(aliases, key=len, reverse=True))
+    tail = re.compile(rf"\s+(?:{_CONNECTIVES})\s+(?:{names})$", re.IGNORECASE)
+    while (match := tail.search(head)) is not None:
+        head = head[: match.start()].rstrip(" ,")
+
+    return head or value
+
+
 def _fold(value: str) -> str:
     folded = unicodedata.normalize("NFKD", clean_name(value)).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", " ", folded.lower()).strip()
@@ -252,6 +323,7 @@ def build(
         e.get("tags", {})["wikidata"] for e, _, _ in candidates if "wikidata" in e.get("tags", {})
     }
     entities = wikidata.fetch(sorted(qids)) if enrich and qids else {}
+    aliases = place_aliases(city)
 
     pois: list[Poi] = []
     for element, category, matched in candidates:
@@ -294,7 +366,11 @@ def build(
                 wikipedia=tags.get("wikipedia"),
                 sitelinks=entity.sitelinks if entity else None,
                 ranking=Ranking.SITELINKS if entity else Ranking.UNRANKED,
-                description=(entity.description if entity else None) or tags.get("description"),
+                description=clean_description(
+                    (entity.description if entity else None) or tags.get("description") or "",
+                    aliases,
+                )
+                or None,
                 image=entity.image if entity else None,
                 website=tags.get("website"),
                 distance_from_centre_km=round(distance_km, 2),
