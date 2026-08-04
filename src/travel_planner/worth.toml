@@ -1,0 +1,389 @@
+# Why a place is worth a visit — or whether there is anything to see at all.
+#
+# Ranking answers "is this known". It does not answer "is this worth looking at",
+# and on real data the two come apart badly: Vancouver's sitelink order puts BC
+# Place, the airport, a neighbouring city, two city halls, a public library and
+# three universities above Stanley Park. Every one of those is genuinely famous.
+# None of them is somewhere you go to look at something.
+#
+# This file supplies the missing distinction, and it is a judgement per value with
+# a recorded reason, exactly like `whitelist.toml`. It is not a reject list — see
+# rule 2 below.
+#
+# THE DISTINCTION THAT DOES THE WORK
+#
+# A place fails "worth seeing" in two completely different ways, and collapsing
+# them loses the answer:
+#
+#   intrinsic  — the thing itself is the sight. A museum, a totem pole, a garden,
+#                a cathedral. Turn up on any open day and there is something there.
+#   event      — the building is a container. BC Place is a stadium; the stadium is
+#                not the attraction, the game is. Empty on every other day. This is
+#                a real destination with a real reason to go — it just needs a date
+#                attached, which is why R1 rather than this step completes it.
+#   incidental — infrastructure and civic function. An airport, a station, a city
+#                hall, an office tower. Visited for a purpose, never for the sight.
+#
+# Only `incidental` means "there is nothing to see". Treating `event` as the same
+# verdict would delete Comerica Park, Fox Theatre and Ford Field, which belong on a
+# visitor's map on the right evening.
+#
+# THREE RULES THE STRUCTURE ENFORCES
+#
+# 1. Classes are matched against BOTH Wikidata P31 labels and this project's own OSM
+#    categories, because neither reaches far enough alone. Only 20% of POIs carry a
+#    QID (753 of 3,735 across the two test cities), so a Wikidata-only table is blind
+#    to four fifths of the map; OSM categories cover everything but are coarser.
+#
+# 2. `mode_precedence` resolves multi-matches — it is NOT a reject list. An element
+#    arrives carrying every tag it has, so a heritage-listed theatre matches both a
+#    performing-arts class and a historic-building class. Resolving by precedence
+#    keeps it; resolving by "reject anything matching `event`" would delete the Fox
+#    Theatre, which is in the Detroit oracle. Intrinsic evidence outranks event
+#    evidence, which outranks incidental: a place that is also a museum is worth
+#    entering whatever else it is.
+#
+# 3. Weight is a prior, never a verdict — and that means **no prior may reach the cut
+#    on its own**. Setting the artwork and museum priors to 5 against a 4.0 cut made
+#    them verdicts: every named artwork was auto-included, and Vancouver's shortlist
+#    became 569 entries of which 291 were artworks, including two painted crosswalks.
+#    Intrinsic priors now top out at 3 and evidence does the lifting. Event and
+#    incidental weights are NOT on that scale — event 1.0 plus a heritage designation
+#    of 3.0 is a deliberate calibration meaning "a listing alone clears the bar".
+#
+# Tuned against Vancouver and Detroit. Expect a pass per new test city, as with the
+# whitelist: each city surfaces a different dominant confusion.
+
+mode_precedence = ["intrinsic", "event", "incidental"]
+
+# ---------------------------------------------------------------------------
+# INTRINSIC — the thing itself is the sight
+# ---------------------------------------------------------------------------
+
+[[class]]
+mode = "intrinsic"
+weight = 3
+why = "A collection to walk through — there is always something inside."
+wikidata = [
+  "museum", "art museum", "science museum", "history museum", "maritime museum",
+  "open-air museum", "ethnographic museum", "museum ship", "art gallery",
+  "historic house museum", "children's museum", "automobile museum",
+]
+osm = ["museum", "gallery"]
+
+[[class]]
+mode = "intrinsic"
+weight = 3
+why = "A designed landscape, open on ordinary days."
+wikidata = [
+  "botanical garden", "japanese garden", "arboretum", "conservatory",
+  "sculpture garden", "rose garden",
+]
+osm = ["garden"]
+
+[[class]]
+mode = "intrinsic"
+weight = 3
+why = "A monument or public artwork — the object itself is what you go to see."
+wikidata = [
+  "sculpture", "statue", "monument", "memorial", "war memorial", "fountain",
+  "mural", "obelisk", "totem pole", "public art", "installation artwork",
+]
+osm = ["monument", "artwork"]
+
+[[class]]
+mode = "intrinsic"
+weight = 3
+why = "The enclosure itself is the attraction."
+wikidata = ["zoo", "aquarium", "amusement park", "theme park", "safari park"]
+osm = ["zoo", "aquarium", "theme_park"]
+
+[[class]]
+mode = "intrinsic"
+weight = 2.5
+why = "Historic fabric — architecture worth seeing, and usually open to visitors."
+wikidata = [
+  "castle", "palace", "fortification", "fort", "city gate", "tower",
+  "lighthouse", "observation tower", "triumphal arch", "archaeological site",
+  "national historic site", "heritage site", "historic district",
+]
+osm = ["castle", "palace", "fortification", "archaeology"]
+
+[[class]]
+mode = "intrinsic"
+weight = 2.5
+why = "The interior is open outside service times, and the exterior always reads."
+wikidata = [
+  "church building", "cathedral", "basilica", "chapel", "abbey", "monastery",
+  "synagogue", "mosque", "temple", "Catholic church building",
+  "Protestant church building", "Buddhist temple", "Hindu temple", "shrine",
+]
+osm = ["religious"]
+
+[[class]]
+mode = "intrinsic"
+weight = 2.5
+why = "Landscape — nothing has to be open."
+wikidata = [
+  "mountain", "waterfall", "beach", "island", "canyon", "gorge", "cave",
+  "hot spring", "volcano", "glacier", "viewpoint", "scenic viewpoint",
+]
+osm = ["nature", "viewpoint"]
+
+[[class]]
+mode = "intrinsic"
+weight = 2
+why = "Open ground anyone can walk into."
+wikidata = [
+  "park", "urban park", "regional park", "national park", "provincial park",
+  "state park", "public garden", "square", "town square", "promenade",
+]
+osm = ["park"]
+
+[[class]]
+mode = "intrinsic"
+weight = 2
+why = "A working market — a sight on any trading day."
+wikidata = ["market", "market hall", "public market", "bazaar", "covered market"]
+
+[[class]]
+mode = "intrinsic"
+weight = 2
+why = "A crossing, seen from a distance and often walked."
+wikidata = [
+  "bridge", "road bridge", "suspension bridge", "cable-stayed bridge",
+  "prestressed concrete bridge", "footbridge", "aqueduct",
+]
+osm = ["bridge"]
+
+[[class]]
+mode = "intrinsic"
+weight = 1.5
+# Height is not merit. Guardian Building and One Wall Centre are both `skyscraper`,
+# and only heritage or architectural evidence tells them apart, so the prior stays low
+# and `[evidence]` lifts the ones that earn it.
+why = "A tall building — the facade is always visible from the street."
+wikidata = ["skyscraper", "high-rise building", "tower block", "architectural structure"]
+
+[[class]]
+mode = "intrinsic"
+weight = 1.5
+why = "A burial ground; the monumental ones are genuine sights."
+wikidata = ["cemetery", "necropolis", "war grave", "mausoleum", "tomb"]
+
+[[class]]
+mode = "intrinsic"
+weight = 2
+why = "Signposted as somewhere visitors go."
+wikidata = ["tourist attraction", "point of interest", "observation deck"]
+osm = ["attraction", "industrial"]
+
+[[class]]
+mode = "intrinsic"
+weight = 0.5
+# Selected on fame alone, the weakest evidence here. Reached only when Wikidata offers
+# no class at all, since every POI on the prominence path carries a QID by construction.
+why = "Known locally, though nothing on record says what there is to see."
+osm = ["landmark"]
+
+# ---------------------------------------------------------------------------
+# EVENT — a container; there is nothing to see without something scheduled
+# ---------------------------------------------------------------------------
+
+# Event weights are deliberately near zero. The bowl is not the attraction, so an
+# event venue starts with almost nothing and has to earn its place on the recognition
+# of its own fabric — which is exactly how Detroit's movie palaces separate from its
+# stadiums. See `guide_event` under `[evidence]` for the other half of the rule.
+
+[[class]]
+mode = "event"
+weight = 1
+# Measured: Detroit's Ford Field, Little Caesars Arena and Comerica Park are all
+# `{{do}}` in Wikivoyage, never `{{see}}`, and BC Place's own guide entry is entirely a
+# list of tenants and fixtures.
+why = "A sports venue — the game is the attraction, not the building."
+wikidata = [
+  "stadium", "arena", "sports venue", "football stadium", "baseball park",
+  "association football stadium", "association football venue", "football venue",
+  "multi-purpose stadium", "indoor arena",
+  "ice hockey arena", "velodrome", "racetrack", "race circuit", "golf course",
+  "ski resort", "sports complex",
+]
+osm = ["stadium"]
+
+[[class]]
+mode = "event"
+weight = 1
+why = "A performance venue — the auditorium is dark between shows."
+wikidata = [
+  "theatre building", "opera house", "concert hall", "performance hall",
+  "performing arts building", "performing arts center", "movie theater",
+  "cinema", "music venue", "amphitheatre", "nightclub",
+]
+osm = ["theatre"]
+
+[[class]]
+mode = "event"
+weight = 1
+why = "A hall for booked events — empty between them."
+wikidata = [
+  "convention center", "exhibition hall", "conference centre", "trade fair",
+  "community centre", "cultural center", "arts centre",
+]
+osm = ["arts_centre"]
+
+# ---------------------------------------------------------------------------
+# INCIDENTAL — infrastructure and civic function; nothing to see
+# ---------------------------------------------------------------------------
+
+[[class]]
+mode = "incidental"
+weight = 0
+# Vancouver International Airport ties BC Place for top sitelink rank at 53 and has no
+# Wikivoyage `{{see}}` listing anywhere.
+why = "Transport infrastructure — you pass through, you do not visit."
+wikidata = [
+  "airport", "international airport", "airline hub", "heliport", "seaplane base",
+  "railway station", "metro station", "train station", "bus station",
+  "transport hub", "ferry terminal", "parking garage", "port",
+]
+
+[[class]]
+mode = "incidental"
+weight = 0
+# Simon Fraser University ranks 30 on sitelinks; no travel guide lists it, and neither
+# does Capilano University or Wayne State.
+why = "A campus — somewhere people study and work."
+wikidata = [
+  "university", "public university", "private university", "research university",
+  "college", "community college", "school", "high school", "primary school",
+  "public research university", "art school", "seminary",
+]
+
+[[class]]
+mode = "incidental"
+weight = 0
+# Port Moody City Hall and Port Moody Public Library both rank 31, at Stanley Park's
+# shoulder, on the strength of a Wikidata item describing the municipality rather than
+# the building.
+why = "A civic building — a public service, not a public spectacle."
+wikidata = [
+  "city hall", "town hall", "courthouse", "prison", "hospital", "police station",
+  "fire station", "post office", "public library", "library", "school district",
+  "government agency", "embassy", "consulate",
+]
+
+[[class]]
+mode = "incidental"
+weight = 0
+why = "Somewhere people work, sleep or shop."
+wikidata = [
+  "office building", "commercial building", "shopping mall", "shopping centre",
+  "hotel", "skyscraper hotel", "restaurant", "supermarket", "bank", "factory",
+  "warehouse", "power station", "water tower", "house",
+  "single-family detached home", "apartment building", "residential building",
+  "condominium", "housing estate",
+]
+
+[[class]]
+mode = "incidental"
+weight = 0
+# These arrive because the OSM `wikidata` tag points at the body that occupies a
+# building rather than at the building.
+why = "An organisation rather than a place."
+wikidata = [
+  "radio station", "television station", "newspaper", "charitable organization",
+  "nonprofit organization", "organization", "business", "enterprise", "company",
+  "political party", "record label", "sports team",
+]
+# `association` is deliberately absent: it is a whole word inside "association
+# football venue", which classified Swangard Stadium as an organisation. Generic
+# single words that compound into unrelated class names do not belong in this table.
+
+[[class]]
+mode = "incidental"
+weight = 0
+# New Westminster ranks third in Vancouver at 42 sitelinks because a whole city carries
+# a `historic=monument`-adjacent tag.
+why = "A town or district — not a single place to visit."
+wikidata = [
+  "city", "town", "village", "municipality", "human settlement", "neighborhood",
+  "neighbourhood", "suburb", "borough", "district", "county", "region",
+  "administrative territorial entity", "unincorporated community",
+]
+
+# ---------------------------------------------------------------------------
+# EVIDENCE — what lifts or lowers the class prior
+# ---------------------------------------------------------------------------
+#
+# Presence is strong evidence; absence is weak. Wikivoyage carries roughly 270 see/do
+# listings against 2,190 Vancouver POIs, and the gaps are where no editor happened to
+# write a paragraph — not where nothing is worth seeing. So a listing adds a lot and
+# its absence subtracts nothing. Making absence a penalty turns a coverage gap into a
+# verdict, which is the same mistake as implementing the whitelist as a reject list.
+
+[evidence]
+
+# Somebody created a Wikidata entity for this thing. A weak signal on its own and a
+# decisive one for street furniture: Vancouver has 375 artworks and 18 of them have an
+# entity, so this is what separates a public sculpture from a painted crosswalk.
+#
+# Deliberately flat, and distinct from `sitelinks_per_point`: existing is not the same
+# as being famous, and a QID with no sitelinks still means a person judged the thing
+# worth recording.
+#
+# **Intrinsic only.** Every stadium has an entity, so for a venue this says nothing
+# about whether the building is worth looking at — applying it there put Comerica Park
+# back over the cut, undoing the rule directly above.
+#
+# The cost is the product decision the plan already names: gating on Wikidata presence
+# raises apparent quality sharply while silently dropping real POIs in under-mapped
+# cities. Coverage is 15.5% here but 10-15% in Kyoto and Mexico City, so expect this
+# constant to need revisiting rather than porting.
+wikidata_entity = 1.5
+
+# A travel guide committed prose to it. The single most discriminating signal measured:
+# 18 of 22 known non-sights have no listing at all.
+guide_see = 5.0
+guide_do = 3.5
+
+# ...but for an EVENT venue a listing says the *programme* is worth attending, and says
+# nothing whatever about whether the building is worth looking at. Scoring it as if it
+# did put Swangard Stadium — a suburban ground listed in the Burnaby article as "home of
+# the BC High School Championships" — into the shortlist at 7.2, alongside Surrey Arts
+# Centre, the Shadbolt Centre and Planet Ant Theater on 0 sitelinks between them. Every
+# guide-listed venue cleared the cut automatically, because class 3 + do 3.5 was already
+# 6.5 against a 4.0 cut.
+#
+# So a listing on an event venue buys confidence and the reason line, not score. What an
+# event venue earns its place with is `heritage_designation` on its own fabric, which is
+# precisely what separates the Fox Theatre from Ford Field. The venue is still scored,
+# still flagged `event`, still in the file — R1 is what resurrects it, with a date.
+guide_event = 0.0
+
+# Formal recognition that the fabric itself matters. Present on 15.7% of QID-bearing
+# POIs, and it is what separates the Guardian Building from One Wall Centre.
+#
+# Set so that an event class (1.0) plus a designation reaches exactly the 4.0 cut:
+# **a designation alone is enough for a venue**, because a listed building is worth
+# looking at whether or not anything is on inside it. Below this the Orpheum sat at 3.7
+# while the Vogue cleared on a `P149` style field the Orpheum happens to lack — an
+# arbitrary split between two heritage theatres a mile apart.
+heritage_designation = 3.0
+
+# Someone is recorded as having designed it, or it is assigned a named style. Weaker
+# than a heritage listing and correlated with it, so priced below.
+architect = 1.0
+architectural_style = 1.0
+
+# Prominence still counts, but only as a tiebreak within a class — it is the signal
+# that produced the bad ordering this step exists to correct, so it is priced low and
+# capped rather than dropped.
+sitelinks_per_point = 0.05
+sitelinks_cap = 2.0
+
+# Distance counts against everything. The 25 km reach is deliberate and correct for
+# discovery, but a civic building 21 km out should not outrank a park 5 km in. This is
+# the "distance does not count against prominence" gap recorded in the README.
+distance_penalty_per_km = 0.06
+distance_penalty_cap = 1.5

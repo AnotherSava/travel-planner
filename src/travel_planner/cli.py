@@ -16,8 +16,10 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 
+from travel_planner.model import CityDataset
 from travel_planner.pipeline import (
     DEFAULT_RANK_PERCENTILE,
     MAX_DISTANCE_KM,
@@ -26,6 +28,7 @@ from travel_planner.pipeline import (
     relations_needing_geometry,
 )
 from travel_planner.recall import load_oracle, measure
+from travel_planner.sources import wikipedia, wikivoyage
 from travel_planner.sources.geocode import AmbiguousPlaceError, GeocodeError, resolve, suggest
 from travel_planner.sources.overpass import (
     OverpassClient,
@@ -34,7 +37,9 @@ from travel_planner.sources.overpass import (
     relation_geometry_query,
     validate,
 )
+from travel_planner.sources.wikidata import Facts, fetch_facts
 from travel_planner.whitelist import Whitelist
+from travel_planner.worth import DEFAULT_CUT, apply_cut, score_dataset
 
 FIXTURES = Path("fixtures")
 OUTPUT = Path("cities")
@@ -133,6 +138,121 @@ def cmd_build(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_worth(args: argparse.Namespace) -> int:
+    """Score every POI on whether there is anything to see, then cut.
+
+    Runs against a dataset ``build`` already wrote, rather than inside it: the two
+    network sources here are unrelated to discovery, and keeping the step separate
+    means a retune re-reads a file instead of re-querying Overpass.
+    """
+    path = OUTPUT / f"{args.slug}.json"
+    if not path.exists():
+        print(f"no dataset at {path}; run `travel build` first", file=sys.stderr)
+        return 2
+
+    dataset = CityDataset.model_validate_json(path.read_text())
+    city = dataset.city
+
+    listings_path = FIXTURES / f"{args.slug}.wikivoyage.json"
+    if listings_path.exists():
+        listings = wikivoyage.load(listings_path)
+    elif args.offline:
+        print(f"no fixture at {listings_path}; run without --offline first", file=sys.stderr)
+        return 2
+    else:
+        try:
+            with wikivoyage.WikivoyageClient() as client:
+                listings = client.listings(
+                    city.centre_lat, city.centre_lon, reach_km=args.radius_km
+                )
+        except wikivoyage.WikivoyageError as exc:
+            print(f"wikivoyage: {exc}", file=sys.stderr)
+            return 1
+        wikivoyage.save(listings, listings_path)
+
+    facts_path = FIXTURES / f"{args.slug}.wikidata-facts.json"
+    if facts_path.exists():
+        facts = {
+            qid: Facts(
+                qid=qid,
+                classes=frozenset(row["classes"]),
+                heritage=row["heritage"],
+                architect=row["architect"],
+                style=row["style"],
+            )
+            for qid, row in json.loads(facts_path.read_text()).items()
+        }
+    elif args.offline:
+        facts = {}
+        print(f"no fixture at {facts_path}; scoring on OSM categories alone", file=sys.stderr)
+    else:
+        qids = [p.wikidata for p in dataset.pois if p.wikidata]
+        facts = fetch_facts(qids)
+        facts_path.write_text(
+            json.dumps(
+                {
+                    qid: {
+                        "classes": sorted(f.classes),
+                        "heritage": f.heritage,
+                        "architect": f.architect,
+                        "style": f.style,
+                    }
+                    for qid, f in facts.items()
+                },
+                ensure_ascii=False,
+                indent=1,
+            )
+        )
+
+    # Wikipedia is the third prose source and the one that reaches the places no
+    # travel guide wrote up — 90% of Vancouver's un-guided shortlist and 70% of
+    # Detroit's have an English article, against Wikidata descriptions that are
+    # routinely tautologies ("St. Andrew's Wesley Church" -> "church building").
+    articles_path = FIXTURES / f"{args.slug}.wikipedia.json"
+    articles: dict[str, wikipedia.Article] = {}
+    if articles_path.exists():
+        articles = wikipedia.load(articles_path)
+    elif not args.offline:
+        try:
+            with wikipedia.WikipediaClient() as client:
+                titles = {
+                    p.key: wikipedia.english_title(p.wikipedia)
+                    for p in dataset.pois
+                    if p.wikidata
+                }
+                unresolved = [
+                    p.wikidata for p in dataset.pois if p.wikidata and not titles.get(p.key)
+                ]
+                by_qid = client.enwiki_titles(unresolved)
+                for poi in dataset.pois:
+                    if poi.wikidata and not titles.get(poi.key):
+                        titles[poi.key] = by_qid.get(poi.wikidata)
+                extracts = client.extracts([t for t in titles.values() if t])
+                articles = {
+                    key: wikipedia.Article(key=key, title=title, extract=extracts[title])
+                    for key, title in titles.items()
+                    if title and title in extracts
+                }
+            wikipedia.save(articles, articles_path)
+        except wikipedia.WikipediaError as exc:
+            print(f"wikipedia unavailable ({exc}); falling back to descriptions", file=sys.stderr)
+
+    score_dataset(dataset.pois, listings=listings, facts=facts, articles=articles)
+    kept = apply_cut(dataset.pois, threshold=args.cut)
+
+    path.write_text(dataset.model_dump_json(indent=1, exclude={"pois": {"__all__": {"tags"}}}))
+
+    modes = Counter(p.worth.mode.value for p in dataset.pois if p.worth)
+    guided = sum(1 for p in dataset.pois if p.worth and p.worth.guide_kind)
+    print(f"{city.display_name}")
+    print(f"  listings     {len(listings)} wikivoyage see/do, {guided} matched to a POI")
+    print(f"  articles     {len(articles)} wikipedia extracts")
+    print("  modes        " + "  ".join(f"{m}={n}" for m, n in modes.most_common()))
+    print(f"  cut          {kept}/{len(dataset.pois)} at score >= {args.cut}")
+    print(f"  written      {path}")
+    return 0
+
+
 def cmd_show(args: argparse.Namespace) -> int:
     path = OUTPUT / f"{args.slug}.json"
     if not path.exists():
@@ -140,13 +260,27 @@ def cmd_show(args: argparse.Namespace) -> int:
         return 2
 
     data = json.loads(path.read_text())
-    pois = data["pois"][: args.limit]
-    for poi in pois:
+    pois = data["pois"]
+    scored = any(p.get("worth") for p in pois)
+
+    if args.shortlist:
+        pois = [p for p in pois if (p.get("worth") or {}).get("shortlisted")]
+    if scored:
+        # Once worth exists it is the better order: sitelink rank is the ordering this
+        # step exists to correct.
+        pois.sort(key=lambda p: -((p.get("worth") or {}).get("score") or 0))
+
+    for poi in pois[: args.limit]:
         rank = poi["sitelinks"] if poi["sitelinks"] is not None else "-"
-        print(
-            f"  {rank!s:>4}  {poi['label'][:40]:<40} "
+        head = (
+            f"  {rank!s:>4}  {poi['label'][:38]:<38} "
             f"{poi['category']:<11} {poi['distance_from_centre_km']:>5.1f}km"
         )
+        if not (worth := poi.get("worth")):
+            print(head)
+            continue
+        print(f"{head}  {worth['score']:>5.1f} {worth['mode']:<10} {worth['confidence']}")
+        print(f"        {worth['reason'][:110]}")
     return 0
 
 
@@ -199,9 +333,17 @@ def main() -> int:
     build_cmd.add_argument("--radius-km", type=float, default=SEARCH_RADIUS_KM)
     build_cmd.set_defaults(func=cmd_build)
 
+    worth_cmd = sub.add_parser("worth", help="score what is worth seeing, then cut")
+    worth_cmd.add_argument("slug")
+    worth_cmd.add_argument("--offline", action="store_true", help="use the frozen fixtures")
+    worth_cmd.add_argument("--cut", type=float, default=DEFAULT_CUT, help="shortlist threshold")
+    worth_cmd.add_argument("--radius-km", type=float, default=SEARCH_RADIUS_KM)
+    worth_cmd.set_defaults(func=cmd_worth)
+
     show = sub.add_parser("show", help="print a built dataset")
     show.add_argument("slug")
     show.add_argument("--limit", type=int, default=25)
+    show.add_argument("--shortlist", action="store_true", help="only POIs above the worth cut")
     show.set_defaults(func=cmd_show)
 
     recall_cmd = sub.add_parser("recall", help="score a dataset against its oracle")

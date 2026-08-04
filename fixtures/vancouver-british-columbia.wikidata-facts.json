@@ -1,0 +1,2753 @@
+{
+ "Q1859": {
+  "classes": [
+   "christian denomination",
+   "religious organization"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q124352": {
+  "classes": [
+   "road bridge",
+   "suspension bridge"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q185228": {
+  "classes": [
+   "public aquarium"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q201603": {
+  "classes": [
+   "charitable organization",
+   "educational institution",
+   "public research university",
+   "university in british columbia"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q277440": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q278084": {
+  "classes": [
+   "box girder bridge",
+   "prestressed concrete bridge",
+   "road bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q295053": {
+  "classes": [
+   "human"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q316407": {
+  "classes": [
+   "reservoir"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q316412": {
+  "classes": [
+   "reservoir"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q316978": {
+  "classes": [
+   "lake"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q321224": {
+  "classes": [
+   "airport",
+   "commercial traffic aerodrome",
+   "international airport"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q337830": {
+  "classes": [
+   "road tunnel"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q361267": {
+  "classes": [
+   "human"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q371960": {
+  "classes": [
+   "art museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q473834": {
+  "classes": [
+   "school shooting"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q517221": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q517318": {
+  "classes": [
+   "arena"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q528031": {
+  "classes": [
+   "arch bridge",
+   "road bridge",
+   "tied-arch bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q612227": {
+  "classes": [
+   "stadium"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q643658": {
+  "classes": [
+   "railway bridge",
+   "vertical-lift bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q650749": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q650762": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q663994": {
+  "classes": [
+   "mesoscaphe"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q683915": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q710283": {
+  "classes": [
+   "girder bridge",
+   "prestressed concrete bridge",
+   "road bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q731136": {
+  "classes": [
+   "regional park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q741730": {
+  "classes": [
+   "botanical garden",
+   "chinese garden",
+   "zhongshan memorial park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q744568": {
+  "classes": [
+   "stadium"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q763076": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q776261": {
+  "classes": [
+   "city in british columbia"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q788218": {
+  "classes": [
+   "factory"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q807984": {
+  "classes": [
+   "sylvan theater",
+   "theatre company",
+   "theatre festival"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q820763": {
+  "classes": [
+   "city hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q829643": {
+  "classes": [
+   "airport"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q832644": {
+  "classes": [
+   "arena"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q839071": {
+  "classes": [
+   "sports venue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q840357": {
+  "classes": [
+   "architectural structure"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q841926": {
+  "classes": [
+   "mountain",
+   "ski resort"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q862283": {
+  "classes": [
+   "business",
+   "footbridge",
+   "suspension bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q876122": {
+  "classes": [
+   "city in british columbia"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q919808": {
+  "classes": [
+   "road bridge",
+   "steel bridge",
+   "through arch bridge",
+   "truss bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q920240": {
+  "classes": [
+   "association football venue",
+   "stadium"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q930702": {
+  "classes": [
+   "hotel",
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q1016903": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1032014": {
+  "classes": [
+   "passenger ship terminal"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q1034602": {
+  "classes": [
+   "charitable organization",
+   "public university",
+   "university in british columbia"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1077975": {
+  "classes": [
+   "anglican or episcopal cathedral"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q1119013": {
+  "classes": [
+   "botanical garden"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1126258": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q1139295": {
+  "classes": [
+   "maritime museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1224775": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1231423": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1326540": {
+  "classes": [
+   "office building",
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q1327751": {
+  "classes": [
+   "border train station",
+   "dead-end railway station",
+   "historic building",
+   "railway station"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q1337587": {
+  "classes": [
+   "art academy",
+   "public university",
+   "university in british columbia"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1342795": {
+  "classes": [
+   "bay"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1391726": {
+  "classes": [
+   "elevated station",
+   "metro station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1391769": {
+  "classes": [
+   "science museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1412284": {
+  "classes": [
+   "organization",
+   "research institute"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1476562": {
+  "classes": [
+   "japanese garden outside japan",
+   "memorial garden"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1477359": {
+  "classes": [
+   "cantilever bridge",
+   "road bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1478298": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q6422284": {
+  "classes": [
+   "cantilever bridge",
+   "girder bridge",
+   "prestressed concrete bridge",
+   "road bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6471285": {
+  "classes": [
+   "lake"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6494663": {
+  "classes": [
+   "geographical feature",
+   "monument"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1479020": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1509055": {
+  "classes": [
+   "cable-stayed bridge",
+   "railway bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1514655": {
+  "classes": [
+   "cathedral"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q1543292": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1543294": {
+  "classes": [
+   "deck arch bridge",
+   "road bridge",
+   "truss bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1625437": {
+  "classes": [
+   "dead-end railway station",
+   "metro station",
+   "transport hub",
+   "underground station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1658086": {
+  "classes": [
+   "airport"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1824686": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1881651": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q1950718": {
+  "classes": [
+   "mountain",
+   "ski resort"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1954743": {
+  "classes": [
+   "architectural structure",
+   "archives",
+   "museum"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q2008430": {
+  "classes": [
+   "girder bridge",
+   "prestressed concrete bridge",
+   "road bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2010103": {
+  "classes": [
+   "sports venue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2155353": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q2170980": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q2258039": {
+  "classes": [
+   "metro station",
+   "underground station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2411231": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q2466506": {
+  "classes": [
+   "botanical garden",
+   "research institute"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2510009": {
+  "classes": [
+   "police museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2582278": {
+  "classes": [
+   "metro station",
+   "station located on surface"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2742735": {
+  "classes": [
+   "convention center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3276885": {
+  "classes": [
+   "photograph"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3338161": {
+  "classes": [
+   "charitable organization",
+   "college"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3392121": {
+  "classes": [
+   "amusement park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3489636": {
+  "classes": [
+   "neighborhood"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3490282": {
+  "classes": [
+   "cape",
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3506816": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4120770": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q4244994": {
+  "classes": [
+   "performing arts center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4263314": {
+  "classes": [
+   "commercial building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q4356863": {
+  "classes": [
+   "cable-stayed bridge",
+   "road bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4667183": {
+  "classes": [
+   "building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q4835326": {
+  "classes": [
+   "sports hall of fame",
+   "sports museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4879643": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4908564": {
+  "classes": [
+   "sports venue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4927320": {
+  "classes": [
+   "botanical garden",
+   "zoo"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q4969743": {
+  "classes": [
+   "prison"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4999589": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4999600": {
+  "classes": [
+   "open-air museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5035366": {
+  "classes": [
+   "regional park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5061594": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5084067": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5132120": {
+  "classes": [
+   "dam"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5160626": {
+  "classes": [
+   "charitable organization",
+   "synagogue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5160665": {
+  "classes": [
+   "nonprofit organization"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5164961": {
+  "classes": [
+   "art gallery"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5247020": {
+  "classes": [
+   "island",
+   "regional park",
+   "river island"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5250776": {
+  "classes": [
+   "lake"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5263357": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5278725": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5289254": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5325165": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5354412": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5377412": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5377865": {
+  "classes": [
+   "engineering society"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5417195": {
+  "classes": [
+   "cultural center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5431623": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5434298": {
+  "classes": [
+   "amusement park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5451857": {
+  "classes": [
+   "performing arts building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5453239": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5532831": {
+  "classes": [
+   "theatre building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5545799": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5547852": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5564477": {
+  "classes": [
+   "statue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5599542": {
+  "classes": [
+   "archaeological site"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q5680423": {
+  "classes": [
+   "fair ground",
+   "urban park"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q5886843": {
+  "classes": [
+   "eastern orthodox cathedral"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q6238659": {
+  "classes": [
+   "lake"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6391472": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6411511": {
+  "classes": [
+   "fountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6418340": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22353729": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6651063": {
+  "classes": [
+   "hill"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6664722": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6670476": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6684095": {
+  "classes": [
+   "lagoon"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6743908": {
+  "classes": [
+   "sylvan theater"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6800006": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6841203": {
+  "classes": [
+   "metro bridge",
+   "railway bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6869292": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6913959": {
+  "classes": [
+   "art gallery",
+   "art museum"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q6920623": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6920825": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6935917": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7012410": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7053967": {
+  "classes": [
+   "extradosed bridge",
+   "footbridge",
+   "metro bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7098551": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7099175": {
+  "classes": [
+   "fixed construction"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7103961": {
+  "classes": [
+   "movie theater",
+   "performing arts building",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q7119825": {
+  "classes": [
+   "building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7122701": {
+  "classes": [
+   "regional park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7138156": {
+  "classes": [
+   "botanical garden"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7148677": {
+  "classes": [
+   "through arch bridge",
+   "truss bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7167519": {
+  "classes": [
+   "stadium"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7200241": {
+  "classes": [
+   "arts educational institution",
+   "not-for-profit arts organization",
+   "performing arts building",
+   "performing arts center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7208036": {
+  "classes": [
+   "high school"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7230805": {
+  "classes": [
+   "railway museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7240975": {
+  "classes": [
+   "architectural structure",
+   "museum"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q7270851": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7342510": {
+  "classes": [
+   "geographical feature"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7348520": {
+  "classes": [
+   "lake"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7435590": {
+  "classes": [
+   "baseball venue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7439919": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7529862": {
+  "classes": [
+   "high school"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7573148": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7586909": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7588434": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q7599693": {
+  "classes": [
+   "movie theater",
+   "performing arts center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q7615559": {
+  "classes": [
+   "museum",
+   "post office"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7641112": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7731049": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7747518": {
+  "classes": [
+   "group of mountains"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7829924": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7914233": {
+  "classes": [
+   "performing arts building"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q7914902": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7939426": {
+  "classes": [
+   "movie theater",
+   "performing arts center"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7973367": {
+  "classes": [
+   "footbridge",
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7982758": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7987851": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q9293120": {
+  "classes": [
+   "courthouse",
+   "square"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q10283669": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q10901377": {
+  "classes": [
+   "square"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q14378639": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14628980": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14628999": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14629008": {
+  "classes": [
+   "bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14874600": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14874660": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14874673": {
+  "classes": [
+   "protected area"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14874754": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q15224695": {
+  "classes": [
+   "anglican or episcopal cathedral"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q15267226": {
+  "classes": [
+   "lighthouse"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q15937506": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q16001280": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q16895482": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q16898567": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q16932810": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q16952628": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q17110641": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q17112169": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q18016086": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q18167820": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q19460680": {
+  "classes": [
+   "lighthouse"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q19460972": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q19759065": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q20712553": {
+  "classes": [
+   "protected area"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q20818771": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q21070699": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22312861": {
+  "classes": [
+   "charitable organization",
+   "performing arts presenting organization"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22360007": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22364845": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22396666": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22435259": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q112769064": {
+  "classes": [
+   "cultural center",
+   "performing arts building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22438320": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22445781": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22462187": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22494852": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22551979": {
+  "classes": [
+   "bay"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22552268": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22555129": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22556204": {
+  "classes": [
+   "beach"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22556592": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22564327": {
+  "classes": [
+   "peninsula"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22589906": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22596778": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22611175": {
+  "classes": [
+   "lake"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22620654": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22623190": {
+  "classes": [
+   "hill"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22626664": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22632665": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22639813": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22644450": {
+  "classes": [
+   "mountain"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22698064": {
+  "classes": [
+   "square"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q23768220": {
+  "classes": [
+   "shipyard"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q24190638": {
+  "classes": [
+   "regional park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q24191490": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q24191913": {
+  "classes": [
+   "cultural center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q26265302": {
+  "classes": [
+   "statue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q27860346": {
+  "classes": [
+   "memorial"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q27919857": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q27919858": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q28034447": {
+  "classes": [
+   "olympic cauldron"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q28232744": {
+  "classes": [
+   "remarkable tree"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q28232747": {
+  "classes": [
+   "war memorial"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q28232775": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q28232802": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q28233228": {
+  "classes": [
+   "passenger ship terminal"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q29467127": {
+  "classes": [
+   "protected area"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q29561261": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q30599460": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q30608247": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q38251760": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q38377943": {
+  "classes": [
+   "movie theater"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q38378028": {
+  "classes": [
+   "movie theater"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q38378154": {
+  "classes": [
+   "theatre building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q38378234": {
+  "classes": [
+   "music venue",
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q38395929": {
+  "classes": [
+   "movie theater"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q46910645": {
+  "classes": [
+   "lighthouse"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q55137840": {
+  "classes": [
+   "art gallery",
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q55636956": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q55822979": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q55823097": {
+  "classes": [
+   "building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q55830180": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q59240392": {
+  "classes": [
+   "art gallery",
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q59509851": {
+  "classes": [
+   "art museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q60456746": {
+  "classes": [
+   "sylvan theater"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q62596820": {
+  "classes": [
+   "sports hall of fame"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q62663548": {
+  "classes": [
+   "railway station"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q63323078": {
+  "classes": [
+   "arts center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q65228151": {
+  "classes": [
+   "gurdwara"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q85704639": {
+  "classes": [
+   "library branch",
+   "public library"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q85767078": {
+  "classes": [
+   "catholic cathedral"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q96382887": {
+  "classes": [
+   "historic building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q97358963": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q102302234": {
+  "classes": [
+   "mansion"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q102302515": {
+  "classes": [
+   "arch"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q102423358": {
+  "classes": [
+   "commercial building",
+   "moved building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q103843212": {
+  "classes": [
+   "business",
+   "commercial building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q103843612": {
+  "classes": [
+   "movie theater"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q103845117": {
+  "classes": [
+   "commercial building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q103962913": {
+  "classes": [
+   "courthouse"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q105020931": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q105030144": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q105890765": {
+  "classes": [
+   "charitable organization",
+   "cultural center",
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q106033642": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q106472497": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q106635032": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q107042967": {
+  "classes": [
+   "zhongshan memorial park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q107352564": {
+  "classes": [
+   "steam clock"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q107436777": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q107542577": {
+  "classes": [
+   "sculpture garden"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q109742483": {
+  "classes": [
+   "performing arts center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q109742882": {
+  "classes": [
+   "art gallery"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q110223646": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q111705537": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q111724574": {
+  "classes": [
+   "art gallery",
+   "event venue",
+   "performing arts building",
+   "theatre building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q111731668": {
+  "classes": [
+   "performing arts building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q112523443": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q112750646": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q113869519": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q113987082": {
+  "classes": [
+   "human settlement",
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q116147416": {
+  "classes": [
+   "bay"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q116157480": {
+  "classes": [
+   "natural harbor"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q116521852": {
+  "classes": [
+   "archives",
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q117825706": {
+  "classes": [
+   "post office"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q121456250": {
+  "classes": [
+   "regional park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q123358094": {
+  "classes": [
+   "venue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q124767584": {
+  "classes": [
+   "performing arts building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q125985426": {
+  "classes": [
+   "scenic viewpoint"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q128996200": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q130278476": {
+  "classes": [
+   "performing arts center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q130278490": {
+  "classes": [
+   "cultural center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q130321690": {
+  "classes": [
+   "hotel building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q130331981": {
+  "classes": [
+   "office building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q130362887": {
+  "classes": [
+   "building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q130398935": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q131905423": {
+  "classes": [
+   "bank building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q131905448": {
+  "classes": [
+   "office building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q132152008": {
+  "classes": [
+   "performing arts building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q134296633": {
+  "classes": [
+   "city hall",
+   "performing arts building",
+   "school building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q134552046": {
+  "classes": [
+   "cultural center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q135466638": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q135467290": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q137442124": {
+  "classes": [
+   "concert hall",
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q137442243": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q138899364": {
+  "classes": [
+   "totem pole"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q140311705": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ }
+}

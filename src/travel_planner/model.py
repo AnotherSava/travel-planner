@@ -40,6 +40,78 @@ class Ranking(StrEnum):
     """No Wikidata QID, so no prominence signal. Half of a typical city."""
 
 
+class WorthMode(StrEnum):
+    """How a place earns a visit — or whether it does at all.
+
+    Ranking says whether somewhere is *known*; this says whether there is anything
+    to look at. The two come apart badly in practice: Vancouver's sitelink order puts
+    an airport, a neighbouring city, two city halls and a public library above
+    Stanley Park.
+    """
+
+    INTRINSIC = "intrinsic"
+    """The thing itself is the sight. Turn up on any open day and it is there."""
+    EVENT = "event"
+    """A container. BC Place is a stadium; the stadium is not the attraction, the
+    game is. A real destination that needs a date attached, which R1 supplies."""
+    INCIDENTAL = "incidental"
+    """Infrastructure or civic function. Visited for a purpose, never for the sight.
+    The only mode that means "there is nothing to see"."""
+    UNKNOWN = "unknown"
+    """No class evidence from either Wikidata or the OSM category."""
+
+
+class Confidence(StrEnum):
+    """How far a derived fact is to be trusted.
+
+    "Nothing to see" and "we do not know" must never render identically — one is a
+    finding, the other is ignorance, and conflating them is what makes a
+    recommendation untrustworthy.
+    """
+
+    VERIFIED = "verified"
+    """A travel guide states it directly."""
+    INFERRED = "inferred"
+    """Derived from a structured class plus corroborating evidence."""
+    ASSUMED = "assumed"
+    """A class prior alone."""
+    UNKNOWN = "unknown"
+
+
+class Worth(BaseModel):
+    """Why a place is worth a visit, and how much.
+
+    Carries its own evidence list because the score is a sum of priors and signals
+    that will be retuned per city, exactly like the whitelist. A bare number is not
+    reviewable; a number next to ``["guide:see", "heritage", "class:museum"]`` is.
+    """
+
+    mode: WorthMode
+    score: float
+    confidence: Confidence
+    reason: str
+    """One line on why to go — the guide's own sentence where one exists."""
+    detail: str | None = None
+    """The guide's full entry, when there is one.
+
+    Kept alongside ``reason`` because a guidebook's opening sentence is often
+    scene-setting rather than the hook: the Hotel Vancouver's begins "The third such
+    hotel in this spot, built over 11 years and completed in 1939" and ends "Bring
+    binoculars for a close-up view of the building's many gargoyles". The short form
+    fits a list row; the long form is what actually answers "why go".
+    """
+    evidence: list[str] = Field(default_factory=list)
+    guide_kind: str | None = None
+    """``see`` or ``do``, when a Wikivoyage listing was matched."""
+    guide_article: str | None = None
+    """Attribution for ``reason`` when it came from Wikivoyage (CC BY-SA)."""
+    source: str | None = None
+    """Where ``reason`` and ``detail`` came from: ``wikivoyage``, ``wikipedia``,
+    ``wikidata`` or ``class``. Both wikis are CC BY-SA and need attributing."""
+    shortlisted: bool = False
+    """Set by the cut, which is a separate step — scoring never drops anything."""
+
+
 class Address(BaseModel):
     """The geocoder's full address object, stored rather than reduced to a scalar.
 
@@ -108,6 +180,9 @@ class Poi(BaseModel):
     distance_from_centre_km: float
     extent_km: float | None = None
     """Longer side of the bounding box. Separates destinations from geography."""
+
+    worth: Worth | None = None
+    """Populated by the worth step, which runs after ``build`` on a written dataset."""
 
     tags: dict[str, str] = Field(default_factory=dict)
 

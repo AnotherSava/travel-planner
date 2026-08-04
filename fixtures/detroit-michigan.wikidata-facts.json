@@ -1,0 +1,3424 @@
+{
+ "Q4702556": {
+  "classes": [
+   "mosque"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4796834": {
+  "classes": [
+   "art museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4883644": {
+  "classes": [
+   "public aquarium",
+   "zoo"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4883646": {
+  "classes": [
+   "botanical garden"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4942598": {
+  "classes": [
+   "movie theater",
+   "synagogue",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q4942959": {
+  "classes": [
+   "skyscraper",
+   "tower block"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q5016487": {
+  "classes": [
+   "office building",
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q5028656": {
+  "classes": [
+   "square",
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3521242": {
+  "classes": [
+   "automobile museum",
+   "building complex",
+   "history museum",
+   "nonprofit organization"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q3564701": {
+  "classes": [
+   "television station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3564810": {
+  "classes": [
+   "nonprofit organization",
+   "television station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3564854": {
+  "classes": [
+   "television station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3564859": {
+  "classes": [
+   "radio station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3564870": {
+  "classes": [
+   "television station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3576018": {
+  "classes": [
+   "zoo"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q3580422": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q3582125": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q3582138": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q3585169": {
+  "classes": [
+   "catholic church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q3585713": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q3738421": {
+  "classes": [
+   "house"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q4426004": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q4564213": {
+  "classes": [
+   "movie theater",
+   "opera house",
+   "performing arts center",
+   "theatre building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q9214": {
+  "classes": [
+   "recurring sporting event"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q12575": {
+  "classes": [
+   "international bridge",
+   "road bridge",
+   "steel bridge",
+   "suspension bridge",
+   "toll bridge"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q60336": {
+  "classes": [
+   "house"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q349055": {
+  "classes": [
+   "public educational institution of the united states",
+   "public research university"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q646735": {
+  "classes": [
+   "catholic parish church"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q743433": {
+  "classes": [
+   "hospitaller order",
+   "order of canons regular",
+   "organization"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q787908": {
+  "classes": [
+   "automobile museum",
+   "hall of fame",
+   "organization"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q868482": {
+  "classes": [
+   "stadium"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q933431": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q1052673": {
+  "classes": [
+   "commercial traffic aerodrome",
+   "international airport"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1104711": {
+  "classes": [
+   "convention center",
+   "multi-purpose hall"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q1142586": {
+  "classes": [
+   "stadium"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q1164723": {
+  "classes": [
+   "sculpture garden"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1201549": {
+  "classes": [
+   "art museum",
+   "movie theater",
+   "museum",
+   "nonprofit organization",
+   "performing arts center"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q1320232": {
+  "classes": [
+   "catholic school",
+   "private not-for-profit educational institution",
+   "university"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1394334": {
+  "classes": [
+   "mosque"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q1541365": {
+  "classes": [
+   "building complex",
+   "convention center",
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q1631818": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q1657858": {
+  "classes": [
+   "international airport"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q1764199": {
+  "classes": [
+   "former railway station",
+   "railway station"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q1810425": {
+  "classes": [
+   "catholic church building",
+   "minor basilica"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q1907270": {
+  "classes": [
+   "gym",
+   "masonic temple",
+   "multi-purpose hall",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q1931275": {
+  "classes": [
+   "movie theater",
+   "office building"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q1987935": {
+  "classes": [
+   "museum",
+   "recording studio"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2065769": {
+  "classes": [
+   "charitable organization",
+   "open-access publisher",
+   "university in ontario"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q2919026": {
+  "classes": [
+   "mansion"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q2942932": {
+  "classes": [
+   "catholic cathedral"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q3061351": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3079894": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q3080199": {
+  "classes": [
+   "movie theater",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q3124927": {
+  "classes": [
+   "building"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q3178970": {
+  "classes": [
+   "art project"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3330679": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q3355290": {
+  "classes": [
+   "office building",
+   "tower block"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q7932892": {
+  "classes": [
+   "building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q7948371": {
+  "classes": [
+   "radio station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7949225": {
+  "classes": [
+   "arena"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7949897": {
+  "classes": [
+   "radio station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7953193": {
+  "classes": [
+   "television station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7895782": {
+  "classes": [
+   "award",
+   "public educational institution of the united states",
+   "university"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5030665": {
+  "classes": [
+   "war memorial"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5049143": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q5052217": {
+  "classes": [
+   "anglican or episcopal cathedral"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q5061948": {
+  "classes": [
+   "protestant church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q5062038": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q5063205": {
+  "classes": [
+   "theatre building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5078673": {
+  "classes": [
+   "african-american museum",
+   "museum",
+   "nonprofit organization"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5108791": {
+  "classes": [
+   "chapel"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q5108796": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q5114664": {
+  "classes": [
+   "building"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q5152131": {
+  "classes": [
+   "building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q5176247": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5231761": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q5240120": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": true
+ },
+ "Q5265835": {
+  "classes": [
+   "railway station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5265857": {
+  "classes": [
+   "business",
+   "organization"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5265938": {
+  "classes": [
+   "urban park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5265941": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5265998": {
+  "classes": [
+   "theatre building",
+   "theatre company"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5299316": {
+  "classes": [
+   "maritime museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5309507": {
+  "classes": [
+   "building complex",
+   "historic district"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q5340289": {
+  "classes": [
+   "single-family detached home"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q5363312": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5452383": {
+  "classes": [
+   "protestant church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q5452798": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q5453418": {
+  "classes": [
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q5453567": {
+  "classes": [
+   "church building",
+   "private not-for-profit educational institution"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q5472134": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q5472269": {
+  "classes": [
+   "fort"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q5530563": {
+  "classes": [
+   "movie theater",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q5595302": {
+  "classes": [
+   "dance hall"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q5610549": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q5643270": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5646445": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q5646446": {
+  "classes": [
+   "sports venue"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q5773699": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q6075816": {
+  "classes": [
+   "synagogue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6117309": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6228133": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6250061": {
+  "classes": [
+   "single-family detached home"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q6504630": {
+  "classes": [
+   "private not-for-profit educational institution",
+   "university"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6737711": {
+  "classes": [
+   "movie theater",
+   "music venue",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q6764376": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q6825296": {
+  "classes": [
+   "protestant church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q6827812": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6837670": {
+  "classes": [
+   "planetarium",
+   "science center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6837679": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q6906877": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6940817": {
+  "classes": [
+   "art museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q6978446": {
+  "classes": [
+   "national shrine",
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7057418": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q7093400": {
+  "classes": [
+   "commercial building",
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q7107460": {
+  "classes": [
+   "single-family detached home"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q7111001": {
+  "classes": [
+   "cathedral",
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7122912": {
+  "classes": [
+   "architectural structure"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q7148643": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7179541": {
+  "classes": [
+   "studio"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q7183037": {
+  "classes": [
+   "house"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q7197543": {
+  "classes": [
+   "assembly plant"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q7397254": {
+  "classes": [
+   "catholic church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7400911": {
+  "classes": [
+   "venue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7402035": {
+  "classes": [
+   "catholic church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7402427": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7430232": {
+  "classes": [
+   "art museum",
+   "club"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7443054": {
+  "classes": [
+   "protestant church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7588571": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7588677": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q7589168": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q7655678": {
+  "classes": [
+   "catholic church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q7698456": {
+  "classes": [
+   "synagogue"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q7733852": {
+  "classes": [
+   "movie theater",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q7757449": {
+  "classes": [
+   "clubhouse",
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q7765934": {
+  "classes": [
+   "sculpture"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7786899": {
+  "classes": [
+   "single-family detached home"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q7842999": {
+  "classes": [
+   "protestant church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q49482246": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49482041": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q7955059": {
+  "classes": [
+   "radio station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q8009557": {
+  "classes": [
+   "michigan state park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q8022133": {
+  "classes": [
+   "house"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q8033556": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q8039464": {
+  "classes": [
+   "masonic temple"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q11062999": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q11806229": {
+  "classes": [
+   "church building",
+   "parish"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q12072758": {
+  "classes": [
+   "hotel",
+   "skyscraper"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": true
+ },
+ "Q14716097": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14716136": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q14716253": {
+  "classes": [
+   "parish"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14716331": {
+  "classes": [
+   "radio station"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q14875132": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q15265208": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q16960320": {
+  "classes": [
+   "mural",
+   "painting"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q16977817": {
+  "classes": [
+   "church building",
+   "church congregation"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q18154984": {
+  "classes": [
+   "sports venue"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q19882039": {
+  "classes": [
+   "group of structures or buildings"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q19901850": {
+  "classes": [],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q22095860": {
+  "classes": [
+   "stadium"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q23505125": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q24693782": {
+  "classes": [
+   "church building",
+   "clubhouse"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q28162798": {
+  "classes": [
+   "theatre building"
+  ],
+  "heritage": true,
+  "architect": true,
+  "style": false
+ },
+ "Q33582906": {
+  "classes": [
+   "bay"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34804382": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34804518": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34806683": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34806968": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34807325": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34807348": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34808030": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34808352": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34810133": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34812430": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34815447": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34819820": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34819933": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34820499": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34821145": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34825497": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34826189": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34836326": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34841177": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34844150": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34844197": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34844800": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34850242": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34850655": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34852588": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34852603": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34853218": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34853756": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34854683": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34866226": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34873681": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34876378": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34876657": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34876683": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34876775": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34877165": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34879708": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34879733": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34881159": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34882303": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34882743": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34885272": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34885499": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34886759": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34895595": {
+  "classes": [
+   "cape"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34895675": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34897492": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34899726": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34904930": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34906125": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34908706": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34908997": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34917904": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34918867": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34920731": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34922233": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q34927646": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q38372553": {
+  "classes": [
+   "movie theater"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q42378125": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49479247": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49479633": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49479952": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49480670": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49481175": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49481386": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49481394": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49481637": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49481734": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49482034": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49483698": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49483721": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49483770": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49483799": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49484061": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49484403": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49485584": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49485838": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49486664": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49488538": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49488743": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49491612": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49492562": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49493142": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49494456": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49495334": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49495702": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49496054": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49496517": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49497726": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49497938": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49499591": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49499797": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49503540": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49503765": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49503802": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49504229": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49504398": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49505788": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49506528": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49506965": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49507884": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49508117": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49508119": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49508332": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49508344": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49509372": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49510114": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49510277": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49510314": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49511427": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49511432": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49511975": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49512036": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49512520": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49512565": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49512755": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49513850": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49514548": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49514603": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49515240": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49515854": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49516092": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49516579": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49518548": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49518740": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49519936": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49520502": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49520581": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49520793": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49521074": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49521266": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49521353": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49521440": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49521493": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49521507": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49521924": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49522280": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49522909": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49523804": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49523930": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49524356": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49524928": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49525633": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49526542": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49530307": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49533465": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49533812": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49533878": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49534115": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49536772": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49536915": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49537403": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49537476": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49537495": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49539529": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49540833": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49541178": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49541469": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49542170": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49543084": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49543363": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49543710": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49546347": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49546764": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49547139": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49548521": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49548831": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49549019": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49549231": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49550408": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49550837": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49551270": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49553764": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49553914": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49554152": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49554169": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49554173": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49555621": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49555638": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49557993": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49558855": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49559015": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49559043": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49560523": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49561147": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49561585": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49561805": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49561850": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49562422": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49564420": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49565263": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49566127": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49566528": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49566529": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49566807": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49567245": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49567554": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49568412": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49570573": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49571033": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49572125": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49572347": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49573585": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49574163": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49574607": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49574726": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49574814": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49575837": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49575890": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49575961": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49576096": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49576572": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49576652": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49577631": {
+  "classes": [
+   "park",
+   "waterworks"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49578359": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49579621": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49579655": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49580312": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49580419": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49580710": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49581750": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49581812": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49582221": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49582975": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49583129": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q49583782": {
+  "classes": [
+   "park"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q56254812": {
+  "classes": [
+   "performance hall"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q79917074": {
+  "classes": [
+   "nature center"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q83436087": {
+  "classes": [
+   "museum"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q103341874": {
+  "classes": [
+   "statue"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q106458351": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q106458355": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": true
+ },
+ "Q106458368": {
+  "classes": [
+   "secularized church"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q106458405": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": true,
+  "architect": false,
+  "style": false
+ },
+ "Q112750134": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q123370714": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q125624095": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q125624113": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": true,
+  "style": false
+ },
+ "Q125624119": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q125624120": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q125624128": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q125624134": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q125624137": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q125624138": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q131274610": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274611": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274624": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274625": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274640": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274641": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274642": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": false
+ },
+ "Q131274643": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274644": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274645": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274646": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ },
+ "Q131274647": {
+  "classes": [
+   "church building"
+  ],
+  "heritage": false,
+  "architect": false,
+  "style": true
+ }
+}
